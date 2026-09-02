@@ -1,0 +1,245 @@
+{
+  "global_qa_strategies": [
+    {
+      "category": "form_validation",
+      "pattern": "Empty required input fields",
+      "strategy": "Submit form with empty inputs to verify explicit client/server validation feedback messages."
+    },
+    {
+      "category": "numeric_boundary",
+      "pattern": "Price/Quantity inputs",
+      "strategy": "Test negative numbers (-1), zero (0), and extreme values (9999999) to verify price calculation and inventory guardrails."
+    },
+    {
+      "category": "string_injection",
+      "pattern": "Text/Search inputs",
+      "strategy": "Inject special characters (<script>alert(1)</script>, ' OR '1'='1) to test XSS and SQL injection robustness."
+    },
+    {
+      "category": "authentication",
+      "pattern": "Login/Register forms",
+      "strategy": "Test invalid email formats and weak passwords to verify security error messaging."
+    },
+    {
+      "category": "accounting_precision",
+      "pattern": "Invoice & Billing tables",
+      "strategy": "Verify that subtotal + tax/VAT - discount equals grand total with 2-decimal precision."
+    },
+    {
+      "category": "workflow_sequence",
+      "pattern": "Automotive Workshop Business Process Sequence",
+      "strategy": "Enforce strict workflow sequence: Vehicle Inspection -> Quotation -> Job Card / Work Order -> Invoice & Billing. Flag any flow forcing Quotation creation BEFORE Vehicle Inspection as a Logical Process Mismatch."
+    }
+  ],
+  "app_specific_learnings": [
+    {
+      "context_keywords": [
+        "html.__variable_f367f3 > body.__classname_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > select.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > select.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs': Add DOM stability delay before interacting with 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > select.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs'"
+    },
+    {
+      "context_keywords": [
+        "html.__variable_f367f3 > body.__classname_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > select.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs.disabled\\:opacity-60",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > select.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs.disabled\\:opacity-60': Add DOM stability delay before interacting with 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > select.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs.disabled\\:opacity-60'"
+    }
+  ],
+  "discovered_vulnerabilities": [],
+  "step_experiences": [
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > select.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs",
+      "outcome": "failed",
+      "root_cause": "Element non-interactable or hidden behind overlay",
+      "fix_rule": "Add DOM stability delay before interacting with 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > select.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > select.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs.disabled\\:opacity-60",
+      "outcome": "failed",
+      "root_cause": "Element non-interactable or hidden behind overlay",
+      "fix_rule": "Add DOM stability delay before interacting with 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > select.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs.disabled\\:opacity-60'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.space-y-6.max-w-7xl.mx-auto > div.flex.flex-col.sm\\:flex-row.sm\\:items-center.sm\\:justify-between.gap-4 > div.flex.gap-2 > a.px-3\\.5.py-2.bg-\\[\\#004e89\\].text-white.rounded-lg.text-xs.font-semibold.hover\\:bg-\\[\\#003d6c\\].transition-colors.shadow-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    }
+  ]
+}

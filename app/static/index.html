@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden max-w-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Web QA Agent - Local Vision</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+</head>
+<body class="overflow-x-hidden max-w-full">
+
+  <!-- Navbar Header -->
+  <header class="navbar overflow-x-hidden max-w-full">
+    <div class="brand">
+      <span class="brand-logo">🧠 Local AI</span>
+      <span class="brand-title">Local Self-Learning Web QA Agent</span>
+    </div>
+    <div class="status-badge" id="gemini-status">
+      <span class="status-dot" style="background-color: #34d399;"></span>
+      <span id="gemini-status-text">Local Model Engine Ready</span>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="dashboard-grid overflow-x-hidden max-w-full">
+
+    <!-- Left Controls & Run History Panel -->
+    <aside class="sidebar overflow-x-hidden max-w-full">
+      
+      <!-- Launch Test Form Card -->
+      <div class="glass-card">
+        <div class="card-header">
+          <h2 class="card-title">🚀 Launch New Audit</h2>
+        </div>
+
+        <!-- Single App Locked Execution Mode -->
+        <div style="margin-bottom: 14px; background: rgba(99, 102, 241, 0.1); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(99, 102, 241, 0.3); text-align: center;">
+          <span style="font-size: 13px; font-weight: 600; color: #818cf8;">🎯 Mode: Single-App Deep Audit</span>
+        </div>
+
+        <form id="test-form">
+          
+          <!-- Single App Input Fields -->
+          <div id="single-app-inputs">
+            <div class="form-group">
+              <label class="form-label" for="target-url">Target Application URL</label>
+              <input type="text" id="target-url" class="form-input" placeholder="http://localhost:3000" value="http://localhost:3000">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="username">Username / ID</label>
+                <input type="text" id="username" class="form-input" placeholder="admin@example.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <div class="password-wrapper relative" style="position: relative;">
+                  <input type="password" id="password" class="form-input" placeholder="••••••••" style="padding-right: 40px;">
+                  <button type="button" id="toggle-password-btn" class="absolute right-3 top-1/2 -translate-y-1/2" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 4px; display: flex; align-items: center; color: var(--text-muted);" title="Toggle password visibility">
+                    <!-- Eye Icon (Hidden state) -->
+                    <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                      <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <!-- Eye-Off Icon (Visible state) -->
+                    <svg id="eye-off-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                      <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                      <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+                      <path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+                      <line x1="2" x2="22" y1="2" y2="22"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" style="width: 100%;">
+              <label class="form-label" for="model-select">Local Vision Model</label>
+              <select id="model-select" class="form-select">
+                <option value="microsoft/Florence-2-base">Microsoft Florence-2 Base (Default Vision - Fast)</option>
+                <option value="google/gemma-2-2b-it">Google Gemma-2 2B IT (Free & Offline Local LLM)</option>
+                <option value="google/paligemma-3b-pt-224">Google PaliGemma 3B Vision (Free & Offline)</option>
+                <option value="microsoft/Florence-2-large">Microsoft Florence-2 Large (High Detail)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="display: flex; align-items: center; gap: 8px;">
+            <input type="checkbox" id="headless-check">
+            <label for="headless-check" style="font-size: 13px; color: var(--text-muted); cursor: pointer;">Run Headless Browser Contexts</label>
+          </div>
+
+          <button type="submit" id="start-btn" class="btn-primary">
+            <span>▶ Start Autonomous Audit</span>
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Recent Test Runs Card -->
+      <div class="glass-card" style="margin-top: 20px;">
+        <div class="card-header">
+          <h2 class="card-title">📜 Audit History</h2>
+          <button id="refresh-history-btn" class="btn-secondary" style="padding: 4px 8px; font-size: 11px;">🔄 Refresh</button>
+        </div>
+        <div class="history-list overflow-y-auto overflow-x-hidden max-w-full" id="history-container">
+          <div style="font-size: 12px; color: var(--text-dim); text-align: center; padding: 20px;">Loading history...</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Main Workspace Panel -->
+    <main class="main-workspace overflow-x-hidden max-w-full">
+
+      <!-- Live Execution Run Tabs Bar -->
+      <div id="live-run-tabs" style="display: flex; gap: 8px; overflow-x: auto; margin-bottom: 12px; padding-bottom: 4px;">
+        <!-- Tab pills dynamically inserted here -->
+      </div>
+
+      <!-- Live Execution Section -->
+      <div class="execution-grid overflow-x-hidden max-w-full">
+
+        <!-- Live Viewport -->
+        <div class="glass-card viewport-container overflow-hidden max-w-full">
+          <div class="card-header">
+            <h2 class="card-title">🎥 Live Browser Viewport</h2>
+            <div style="display: flex; gap: 8px;">
+              <span id="agent-state-indicator" class="status-badge" style="background: rgba(234, 179, 8, 0.1); border-color: rgba(234, 179, 8, 0.3); color: #facc15;">Agent: Idle</span>
+              <span id="step-indicator" class="status-badge" style="background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.3); color: #818cf8;">Step: Idle</span>
+            </div>
+          </div>
+          
+          <div id="viewport-box" class="w-full max-w-full overflow-hidden rounded-xl aspect-video bg-black">
+            <div id="screen-placeholder" class="screen-placeholder">
+              <span style="font-size: 48px;">🌐</span>
+              <p>Enter target URL and click 'Start Autonomous Audit' to launch stream</p>
+            </div>
+            <img id="live-screenshot" class="browser-screen w-full h-full object-contain max-h-[500px] block mx-auto" style="display: none;" alt="Live Browser Stream">
+          </div>
+        </div>
+
+        <!-- Live Agent Logs & Multi-Agent Communication Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+
+          <!-- Multi-Agent Inter-Communication Stream -->
+          <div class="glass-card overflow-hidden max-w-full" style="display: flex; flex-direction: column;">
+            <div class="card-header">
+              <h2 class="card-title">🤖 Multi-Agent Inter-Communication Stream</h2>
+            </div>
+            <div class="terminal-window overflow-y-auto overflow-x-hidden max-w-full" id="multi-agent-stream" style="font-family: 'Fira Code', monospace; font-size: 11px; background: rgba(15, 23, 42, 0.9);">
+              <div class="log-entry" style="color: #60a5fa;"><span class="log-time">[Swarm Init]</span> Multi-Agent Collaborative Engine ready (Florence-2 + Gemma-2 + RBAC Auditor).</div>
+            </div>
+          </div>
+
+          <!-- Terminal Log Feed -->
+          <div class="glass-card overflow-hidden max-w-full" style="display: flex; flex-direction: column;">
+            <div class="card-header">
+              <h2 class="card-title">💻 Live Agent Log Stream</h2>
+            </div>
+            <div class="terminal-window overflow-y-auto overflow-x-hidden max-w-full" id="terminal-logs">
+              <div class="log-entry"><span class="log-time">[System]</span> Ready to start Local AI autonomous web audit session.</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Report Viewer Section -->
+      <div class="glass-card report-section" id="report-view-card">
+        
+        <div class="card-header">
+          <h2 class="card-title">📊 Final Audit & Report Viewer</h2>
+          <div class="report-actions" id="report-download-actions" style="display: none;">
+            <button id="btn-download-docx" class="btn-primary" style="background: linear-gradient(135deg, #6366f1, #4f46e5); color: white; border: none; font-weight: 600;">📥 Download DOCX</button>
+            <button id="btn-download-json" class="btn-secondary">⬇️ Download JSON</button>
+            <button id="btn-download-md" class="btn-secondary">⬇️ Download Markdown</button>
+          </div>
+        </div>
+
+        <!-- Summary Stat Cards -->
+        <div class="summary-cards-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total Steps Executed</div>
+            <div class="stat-value" id="stat-steps">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Duration</div>
+            <div class="stat-value" id="stat-duration">0s</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Critical Issues Found</div>
+            <div class="stat-value" id="stat-issues" style="color: #f87171;">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Overall UX Rating</div>
+            <div class="stat-value" id="stat-ux" style="font-size: 16px; color: #34d399;">N/A</div>
+          </div>
+        </div>
+
+        <!-- Tabbed Detailed Output -->
+        <div id="report-details-box" style="margin-top: 16px;">
+          <div style="color: var(--text-dim); text-align: center; padding: 40px; border: 1px dashed var(--border-color); border-radius: var(--radius-sm);">
+            Audit report details will appear here automatically upon test completion.
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="/static/app.js?v=1.0.2"></script>
+</body>
+</html>
