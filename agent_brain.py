@@ -1020,10 +1020,11 @@ CRITICAL INSTRUCTIONS:
         
         try:
             import base64
+            import gc
             image_bytes = base64.b64decode(screenshot_b64) if screenshot_b64 else b""
-            raw_pil = Image.open(io.BytesIO(image_bytes)).convert("RGB") if image_bytes else Image.new("RGB", (768, 768), (255, 255, 255))
+            raw_pil = Image.open(io.BytesIO(image_bytes)).convert("RGB") if image_bytes else Image.new("RGB", (512, 512), (255, 255, 255))
             
-            pil_image = make_square_image(raw_pil, target_size=768)
+            pil_image = make_square_image(raw_pil, target_size=512)
             
             task_prompt = "<MORE_DETAILED_CAPTION>"
             prompt = task_prompt if "florence" in self.model_name.lower() else full_prompt
@@ -1031,24 +1032,32 @@ CRITICAL INSTRUCTIONS:
             def _infer():
                 if hasattr(self.processor, "__call__"):
                     try:
-                        inputs = self.processor(text=prompt, images=pil_image, return_tensors="pt").to(self.device)
-                        if self.device == "cuda" and "pixel_values" in inputs:
-                            inputs["pixel_values"] = inputs["pixel_values"].to(torch.float16)
+                        with torch.inference_mode():
+                            inputs = self.processor(text=prompt, images=pil_image, return_tensors="pt").to(self.device)
+                            if self.device == "cuda" and "pixel_values" in inputs:
+                                inputs["pixel_values"] = inputs["pixel_values"].to(torch.float16)
+                                
+                            generated_ids = self.model.generate(
+                                **inputs,
+                                max_new_tokens=128,
+                                do_sample=False,
+                                num_beams=1,
+                                use_cache=True,
+                            )
+                            generated_text = self.processor.batch_decode(generated_ids, skip_special_tokens=True)[0]
+                            if "florence" in self.model_name.lower() and hasattr(self.processor, "post_process_generation"):
+                                parsed_answer = self.processor.post_process_generation(generated_text, task=task_prompt, image_size=(pil_image.width, pil_image.height))
+                                result_text = str(parsed_answer.get(task_prompt, generated_text))
+                            else:
+                                result_text = generated_text
                             
-                        generated_ids = self.model.generate(
-                            **inputs,
-                            max_new_tokens=256,
-                            do_sample=False,
-                            num_beams=1,
-                            use_cache=False,
-                        )
-                        generated_text = self.processor.batch_decode(generated_ids, skip_special_tokens=True)[0]
-                        if "florence" in self.model_name.lower() and hasattr(self.processor, "post_process_generation"):
-                            parsed_answer = self.processor.post_process_generation(generated_text, task=task_prompt, image_size=(pil_image.width, pil_image.height))
-                            return str(parsed_answer.get(task_prompt, generated_text))
-                        return generated_text
+                            del inputs
+                            del generated_ids
+                            gc.collect()
+                            return result_text
                     except Exception as inf_err:
                         logger.warning(f"Inference warning: {inf_err}")
+                        gc.collect()
                 return "Visual page layout captured with active form fields."
 
             visual_caption = await asyncio.to_thread(_infer)
