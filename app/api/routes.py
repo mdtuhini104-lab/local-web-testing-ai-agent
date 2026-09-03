@@ -5,6 +5,7 @@ REST API Routes for launching test runs, retrieving history, downloading reports
 import asyncio
 import datetime
 import json
+import logging
 import os
 from typing import Dict, List, Optional
 from fastapi import APIRouter, BackgroundTasks, HTTPException
@@ -16,6 +17,7 @@ from app.config import settings
 from app.db import database
 from app.api.websocket import ws_manager
 
+logger = logging.getLogger("api_routes")
 router = APIRouter(prefix="/api")
 
 
@@ -239,6 +241,7 @@ async def start_test_run(req: RunRequest, background_tasks: BackgroundTasks):
         )
     )
     active_tasks[run_id] = task
+    task.add_done_callback(lambda t: active_tasks.pop(run_id, None))
 
     return {
         "status": "started",
@@ -262,6 +265,7 @@ async def start_batch_test_run(req: BatchRunRequest, background_tasks: Backgroun
         )
     )
     active_tasks[batch_id] = task
+    task.add_done_callback(lambda t: active_tasks.pop(batch_id, None))
 
     return {
         "status": "started",
@@ -340,7 +344,7 @@ async def download_report_docx(run_id: str):
                 summary_dict = s_data.get("summary", s_data)
                 steps_list = s_data.get("steps", [])
         except Exception as e:
-            pass
+            logger.error(f"Failed to parse report JSON for docx generation in run {run_id}: {e}")
 
     # Fallback to DB if JSON loading yielded nothing
     if not summary_dict:
@@ -358,8 +362,8 @@ async def download_report_docx(run_id: str):
                     "critical_bugs": [],
                 }
                 steps_list = run_data.get("steps", [])
-        except Exception:
-            pass
+        except Exception as db_err:
+            logger.error(f"Failed to fetch run data from DB for docx generation in run {run_id}: {db_err}")
 
     # Final fallback if2 neither file nor DB entry exist
     if not summary_dict:

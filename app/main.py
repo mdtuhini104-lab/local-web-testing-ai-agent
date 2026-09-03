@@ -42,10 +42,15 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# CORS middleware for local development
+# Restrict origins and secure credential handling
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+        "http://127.0.0.1:3000",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -54,9 +59,10 @@ app.add_middleware(
 # Mount REST API
 app.include_router(api_router)
 
-# Mount Storage Directory (for serving screenshot artifacts)
-os.makedirs(settings.STORAGE_DIR, exist_ok=True)
-app.mount("/storage", StaticFiles(directory=settings.STORAGE_DIR), name="storage")
+# Mount Storage Runs Directory (only serves screenshot artifacts, preventing public DB / file exposure)
+runs_dir = os.path.join(settings.STORAGE_DIR, "runs")
+os.makedirs(runs_dir, exist_ok=True)
+app.mount("/storage/runs", StaticFiles(directory=runs_dir), name="storage_runs")
 
 # Mount Dashboard Static Files
 static_dir = os.path.join(os.path.dirname(__file__), "static")
