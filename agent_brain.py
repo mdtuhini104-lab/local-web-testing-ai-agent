@@ -31,6 +31,10 @@ def derive_user_and_business_impact(category: str, issue_text: str) -> str:
     """
     issue_low = issue_text.lower()
 
+    # Non-critical Static Asset & Font Warnings
+    if any(k in issue_low for k in [".woff", "woff2", "font", "preload", "favicon"]):
+        return "Non-critical cosmetic or font preload optimization notice. Does not impact application business logic or backend data synchronization."
+
     # Category 1: Network & API Failures
     if category == "network_api_failures" or any(k in issue_low for k in ["http", "404", "500", "502", "503", "401", "403", "api", "network"]):
         if any(k in issue_low for k in ["post", "put", "patch", "create", "add", "save", "submit"]):
@@ -93,6 +97,10 @@ def derive_fix_advice(category: str, issue_text: str) -> str:
     """
     issue_low = issue_text.lower()
 
+    # Non-critical Static Asset & Font Warnings
+    if any(k in issue_low for k in [".woff", "woff2", "font", "preload", "favicon"]):
+        return "Inspect font asset preloads and paths in HTML <head> or Next.js layout.tsx. Non-blocking build optimization."
+
     if category == "network_api_failures" or any(k in issue_low for k in ["http", "404", "500", "502", "503", "401", "403", "api", "network"]):
         if "404" in issue_low:
             return "Verify API endpoint route definition, Next.js / Express route handler parameters, and backend controller mapping."
@@ -130,6 +138,78 @@ def derive_fix_advice(category: str, issue_text: str) -> str:
         return "Ensure minimum WCAG 2.1 color contrast (4.5:1), attach `<label>` or `aria-label` tags, and provide clear active focus states."
 
     return "Inspect code implementation and resolve identified runtime anomalies."
+
+
+DISALLOWED_LAYOUT_CLASSES = {
+    "relative", "flex", "grid", "block", "hidden", "absolute",
+    "w-full", "h-full", "items-center", "justify-between", "container",
+    "inline-block", "inline-flex", "fixed", "static", "sticky",
+    "min-h-screen", "max-w-full", "overflow-hidden", "overflow-x-auto", "overflow-y-auto"
+}
+
+def is_valid_actionable_selector(selector: str) -> bool:
+    """
+    Strictly validates that a selector is NOT a layout-only generic selector
+    such as '.relative', '.flex', 'div', 'span', etc.
+    Must target valid actionable elements only.
+    """
+    if not selector or not isinstance(selector, str):
+        return False
+    sel = selector.strip()
+    if not sel:
+        return False
+    sel_low = sel.lower()
+
+    # Disallow bare non-actionable tags
+    bare_non_actionable = {
+        "div", "span", "p", "section", "article", "main", "header",
+        "footer", "aside", "nav", "ul", "li", "table", "tr", "td", "tbody", "thead"
+    }
+    if sel_low in bare_non_actionable:
+        return False
+
+    # Disallow single layout classes (e.g. '.relative', '.flex', '.grid')
+    if sel.startswith(".") and " " not in sel and ">" not in sel:
+        cls_name = sel[1:].lower()
+        if cls_name in DISALLOWED_LAYOUT_CLASSES:
+            return False
+
+    # Check terminal component in chain (e.g. 'div.relative', 'form > div.relative')
+    parts = [p.strip() for p in sel.split(">")]
+    last_part = parts[-1].lower() if parts else sel_low
+
+    for cls in DISALLOWED_LAYOUT_CLASSES:
+        if last_part == f".{cls}" or last_part == f"div.{cls}" or last_part == f"span.{cls}" or last_part.endswith(f".{cls}"):
+            # Check if last_part starts with an actionable tag or id
+            if not any(last_part.startswith(t) for t in ["button", "a", "input", "select", "textarea"]) and "#" not in last_part:
+                return False
+
+    # Disallow terminal bare div or span
+    if last_part in bare_non_actionable:
+        return False
+
+    return True
+
+
+def is_valid_actionable_element(el: Dict[str, Any]) -> bool:
+    """
+    Checks if a DOM snapshot element is a genuine actionable element:
+    button, a, input, select, textarea, or elements with explicit role="button"/"link".
+    Strictly excludes layout-only CSS selectors and generic non-actionable containers.
+    """
+    if not isinstance(el, dict):
+        return False
+    tag = str(el.get("tag", "")).strip().lower()
+    role = str(el.get("role", "")).strip().lower()
+    selector = str(el.get("selector", "")).strip()
+
+    if not is_valid_actionable_selector(selector):
+        return False
+
+    valid_tags = {"button", "a", "input", "select", "textarea"}
+    valid_roles = {"button", "link", "combobox", "tab", "menuitem"}
+
+    return tag in valid_tags or role in valid_roles
 
 
 class CategorizedIssues(BaseModel):
@@ -404,6 +484,7 @@ class SupervisorAgent:
         step_number: int,
         login_credentials: Optional[Dict[str, str]] = None,
         pending_routes: Optional[List[str]] = None,
+        is_public_mode: bool = False,
     ) -> tuple[AgentActionResponse, Optional[str]]:
         """
         Inspects primary_response against DOM elements and coverage.
@@ -411,7 +492,10 @@ class SupervisorAgent:
         or pending routes remain (or within the first 10 steps), Supervisor overrides and redirects Primary Agent.
         """
         dom_snapshot = dom_snapshot or {}
-        interactive_elements = (dom_snapshot or {}).get("elements", []) or []
+        interactive_elements = [
+            el for el in ((dom_snapshot or {}).get("elements", []) or [])
+            if isinstance(el, dict) and is_valid_actionable_element(el)
+        ]
         v_selectors = set(visited_selectors) if visited_selectors else set()
         for act in (previous_actions or []):
             if isinstance(act, dict) and (act or {}).get("target_selector"):
@@ -433,15 +517,26 @@ class SupervisorAgent:
             name = str(el_dict.get("name", "") or "").lower()
             selector = el_dict.get("selector", "")
 
-            if not selector or selector in v_selectors:
+            if not selector or selector in v_selectors or not is_valid_actionable_selector(selector):
+                continue
+
+            # In public mode, do not target login/password inputs
+            if is_public_mode and (el_type == "password" or any(k in f"{selector} {name}".lower() for k in ["password", "login"])):
                 continue
 
             if tag in ["input", "textarea", "select"] and el_type not in ["submit", "button", "hidden", "checkbox", "radio"]:
                 unvisited_inputs.append((selector, tag, el_type, placeholder, name))
-            elif any(k in text for k in ["save", "submit", "add", "create", "confirm", "login", "sign in"]) or el_type == "submit":
-                unvisited_buttons.append((selector, text))
-            elif tag == "button" or any(k in text for k in ["new", "create", "edit", "action", "plus", "generate", "filter", "search"]):
-                unvisited_buttons.append((selector, text))
+            elif tag in ["button", "input"]:
+                if is_public_mode and any(k in text for k in ["login", "sign in"]):
+                    continue
+                if el_type == "submit" or any(k in text for k in ["save", "submit", "create", "confirm", "send", "contact", "quote", "inquire"]):
+                    unvisited_buttons.append((selector, text))
+            elif tag in ["button", "a"]:
+                if is_public_mode:
+                    if any(k in text for k in ["learn more", "view services", "contact", "about", "quote", "explore", "products", "pricing", "inquire", "services"]):
+                        unvisited_buttons.append((selector, text))
+                elif any(k in text for k in ["new", "create", "add", "edit", "action", "plus", "generate"]):
+                    unvisited_buttons.append((selector, text))
 
         target_low = ((primary_response or AgentActionResponse()).target_selector or "").lower() if primary_response else ""
         is_finish = (primary_response or AgentActionResponse()).action == "finish" if primary_response else False
@@ -461,21 +556,43 @@ class SupervisorAgent:
                 batch_list = []
                 for target_sel, tag, el_type, placeholder, name in unvisited_inputs:
                     comb = f"{el_type} {placeholder} {name} {target_sel}".lower()
-                    val_to_type = "QA Test Entry Data"
-                    if login_credentials and (login_credentials or {}).get("username") and any(k in comb for k in ["user", "login", "username"]) and "customer" not in comb:
+                    if is_public_mode or not login_credentials:
+                        if any(k in comb for k in ["email", "mail"]):
+                            val_to_type = "customer@example.com"
+                        elif any(k in comb for k in ["phone", "mobile", "tel"]):
+                            val_to_type = "01700000000"
+                        elif any(k in comb for k in ["name", "contact", "person"]):
+                            val_to_type = "Test Customer QA"
+                        elif any(k in comb for k in ["subject", "topic", "title"]):
+                            val_to_type = "Customer Product & Service Inquiry"
+                        elif any(k in comb for k in ["message", "inquiry", "query", "body", "comment", "note", "desc"]):
+                            val_to_type = "Hello, I am interested in your services and pricing. Automated QA Verification."
+                        elif any(k in comb for k in ["qty", "quantity", "count"]):
+                            val_to_type = "1"
+                        else:
+                            val_to_type = "Automated QA Public Verification"
+                    elif login_credentials and (login_credentials or {}).get("username") and any(k in comb for k in ["user", "login", "username"]) and "customer" not in comb:
                         val_to_type = (login_credentials or {}).get("username", "")
                     elif login_credentials and (login_credentials or {}).get("password") and "pass" in comb:
                         val_to_type = (login_credentials or {}).get("password", "")
-                    elif "email" in comb:
-                        val_to_type = "test.qa@example.com"
+                    elif any(k in comb for k in ["qty", "quantity", "count"]):
+                        val_to_type = "2"
+                    elif any(k in comb for k in ["customer", "client", "buyer", "vendor", "owner"]):
+                        val_to_type = "Test Customer QA"
                     elif any(k in comb for k in ["phone", "mobile", "tel"]):
-                        val_to_type = "01712345678"
-                    elif any(k in comb for k in ["price", "cost", "amount", "rate"]):
-                        val_to_type = "150.00"
-                    elif any(k in comb for k in ["item", "product"]):
-                        val_to_type = "QA Test Item"
-                    elif any(k in comb for k in ["customer", "client"]):
-                        val_to_type = "QA Test Customer"
+                        val_to_type = "01700000000"
+                    elif any(k in comb for k in ["vehicle", "car", "reg", "plate"]):
+                        val_to_type = "DHK-MET-11-2233"
+                    elif any(k in comb for k in ["price", "cost", "amount", "rate"]) or el_type == "number":
+                        val_to_type = "1500"
+                    elif any(k in comb for k in ["name", "title"]):
+                        val_to_type = "Test Customer QA"
+                    elif "email" in comb:
+                        val_to_type = "test_customer_qa@example.com"
+                    elif "date" in comb:
+                        val_to_type = "2026-08-29"
+                    else:
+                        val_to_type = "Automated QA Verification Record"
 
                     batch_list.append({"selector": target_sel, "input_value": val_to_type})
 
@@ -511,7 +628,7 @@ class SupervisorAgent:
                     observed_issues=(primary_response or AgentActionResponse()).observed_issues if primary_response else [],
                     ux_feedback=(primary_response or AgentActionResponse()).ux_feedback if primary_response else [],
                     categorized_issues=(primary_response or AgentActionResponse()).categorized_issues if primary_response else CategorizedIssues(),
-                    reasoning=f"SUPERVISOR OVERRIDE: Direct Form Action Protocol active. Directed to click Save/Submit button '{text}' ({target_sel}) for DB data persistence.",
+                    reasoning=f"SUPERVISOR OVERRIDE: Direct Form Action Protocol active. Directed to click action button '{text}' ({target_sel}).",
                     supervisor_warning=warning_msg,
                 )
             elif has_pending and pending_routes:
@@ -885,16 +1002,26 @@ class AIBrain:
             logger.error(f"❌ Failed to load local model: {e}")
             raise
 
-    def analyze_screen_and_decide(self, screenshot_b64: str, dom_snapshot: Dict[str, Any], current_url: str) -> Dict[str, Any]:
+    def analyze_screen_and_decide(
+        self,
+        screenshot_b64: str,
+        dom_snapshot: Dict[str, Any],
+        current_url: str,
+        login_credentials: Optional[Dict[str, str]] = None,
+        is_public_mode: bool = False,
+    ) -> Dict[str, Any]:
         """
         Direct Screen & DOM Analysis Engine (Google Gemma-2 / PaliGemma / Florence-2).
         Returns structured decision dict with autonomous fallbacks.
+        Strictly forbids generic layout selectors and enforces form auto-filling before submit.
         """
         try:
             dom_snapshot = dom_snapshot or {}
-            interactive_elements = [el for el in (dom_snapshot.get("elements") or []) if isinstance(el, dict)]
+            interactive_elements = [
+                el for el in (dom_snapshot.get("elements") or [])
+                if isinstance(el, dict) and is_valid_actionable_element(el)
+            ]
             
-            # Simple rule-based DOM crawl heuristic fallback
             fallback_decision = {
                 "action": "scroll",
                 "selector": "",
@@ -903,34 +1030,178 @@ class AIBrain:
             }
 
             if interactive_elements:
-                unvisited_inputs = [el for el in interactive_elements if str(el.get("tag", "")).lower() in ["input", "textarea", "select"]]
-                if unvisited_inputs:
-                    target_el = unvisited_inputs[0]
-                    fallback_decision = {
+                curr_url_low = str(dom_snapshot.get("url", "") or current_url or "").lower()
+
+                # Public Mode: If accidentally on login page, look for return / home / back links to stay in public areas
+                if is_public_mode:
+                    has_password = any(str(el.get("type", "")).lower() == "password" or "pass" in str(el.get("selector", "")).lower() for el in interactive_elements)
+                    if has_password or any(k in curr_url_low for k in ["/login", "/auth", "/signin"]):
+                        home_links = [
+                            el for el in interactive_elements
+                            if str(el.get("tag", "")).lower() in ["a", "button"]
+                            and any(k in str(el.get("text", "")).lower() or k in str(el.get("selector", "")).lower() for k in ["home", "back", "logo", "brand", "site", "return"])
+                            and is_valid_actionable_selector(el.get("selector", ""))
+                        ]
+                        if home_links:
+                            return {
+                                "action": "click",
+                                "selector": home_links[0].get("selector", ""),
+                                "value": "",
+                                "reasoning": f"Public Visitor Mode: Bypassing authentication page by returning to public site via '{home_links[0].get('selector')}'."
+                            }
+
+                # 1. Smart Form Auto-Filling: Detect visible empty input, textarea, and select fields
+                form_inputs = [
+                    el for el in interactive_elements
+                    if str(el.get("tag", "")).lower() in ["input", "textarea", "select"]
+                    and str(el.get("type", "")).lower() not in ["submit", "button", "hidden", "checkbox", "radio"]
+                    and (not is_public_mode or (str(el.get("type", "")).lower() != "password" and not any(k in str(el.get("selector", "")).lower() for k in ["password", "login"])))
+                    and not any(k in str(el.get("selector", "")).lower() or k in str(el.get("placeholder", "")).lower() for k in ["search", "filter", "find"])
+                    and is_valid_actionable_selector(el.get("selector", ""))
+                    and (not el.get("current_value") or str(el.get("current_value")).strip() in ["", "0", "0.00"])
+                ]
+                if form_inputs:
+                    target_el = form_inputs[0]
+                    target_sel = target_el.get("selector", "")
+                    target_tag = str(target_el.get("tag", "")).lower()
+
+                    if target_tag == "select":
+                        opt_val = target_el.get("first_option") or "1"
+                        return {
+                            "action": "select",
+                            "selector": target_sel,
+                            "value": opt_val,
+                            "reasoning": f"Smart Form Auto-Filling: Selecting first available option '{opt_val}' on dropdown '{target_sel}'."
+                        }
+
+                    mock_val = self._generate_dummy_input_value(
+                        tag=target_tag,
+                        el_type=str(target_el.get("type", "")),
+                        placeholder=str(target_el.get("placeholder", "")),
+                        name=str(target_el.get("name", "")),
+                        selector=target_sel,
+                        login_credentials=login_credentials,
+                        is_auth_ctx=False if is_public_mode else any(k in curr_url_low for k in ["/login", "/auth"]),
+                        is_public_mode=is_public_mode,
+                    )
+                    reason_ctx = "Customer Inquiry / Lead Form" if is_public_mode else "Form Auto-Filling"
+                    return {
                         "action": "type",
-                        "selector": target_el.get("selector", ""),
-                        "value": "QA Test Entry Data",
-                        "reasoning": f"Autonomous heuristic: Filling input field '{target_el.get('selector')}'."
+                        "selector": target_sel,
+                        "value": mock_val,
+                        "reasoning": f"Smart {reason_ctx}: Populating input field '{target_sel}' with contextual mock data '{mock_val}' before submit."
                     }
-                else:
-                    action_btns = [el for el in interactive_elements if any(k in str(el.get("text", "")).lower() for k in ["save", "submit", "add", "create", "login"])]
-                    if action_btns:
-                        target_el = action_btns[0]
-                        fallback_decision = {
+
+                # 2. Form Submit: Locate and click primary submit action after inputs are filled
+                submit_intents = ["submit", "send", "save", "create", "confirm", "contact", "quote", "inquire"]
+                if not is_public_mode:
+                    submit_intents.extend(["login", "sign in"])
+
+                submit_btns = [
+                    el for el in interactive_elements
+                    if str(el.get("tag", "")).lower() in ["button", "input"]
+                    and (str(el.get("type", "")).lower() == "submit" or any(k in str(el.get("text", "")).lower() for k in submit_intents))
+                    and not (is_public_mode and any(k in str(el.get("text", "")).lower() for k in ["login", "sign in"]))
+                    and is_valid_actionable_selector(el.get("selector", ""))
+                ]
+                if submit_btns:
+                    target_el = submit_btns[0]
+                    return {
+                        "action": "click",
+                        "selector": target_el.get("selector", ""),
+                        "value": "",
+                        "reasoning": f"Smart Form Submission: Submitting populated form via primary action button '{target_el.get('text', '')}' ({target_el.get('selector')})."
+                    }
+
+                # 3. In-App AI Feature Verification: Prioritize AI Assistant & Generator triggers
+                ai_triggers = [
+                    el for el in interactive_elements
+                    if str(el.get("tag", "")).lower() in ["button", "a"]
+                    and any(k in str(el.get("text", "")).lower() or k in str(el.get("selector", "")).lower()
+                            for k in ["ask ai", "generate with ai", "ai assistant", "sparkle", "ai-btn", "✨", "🤖", "assistant", "bot"])
+                    and is_valid_actionable_selector(el.get("selector", ""))
+                ]
+                if ai_triggers:
+                    target_el = ai_triggers[0]
+                    return {
+                        "action": "verify_ai",
+                        "selector": target_el.get("selector", ""),
+                        "value": "Run complete system diagnostic summary.",
+                        "reasoning": f"In-App AI Feature Verification: Testing embedded AI assistant/generator on '{target_el.get('selector')}'."
+                    }
+
+                # 4. Public Visitor CTA Buttons (Learn More, View Services, Contact Us, Get a Quote)
+                if is_public_mode:
+                    cta_btns = [
+                        el for el in interactive_elements
+                        if str(el.get("tag", "")).lower() in ["button", "a"]
+                        and any(k in str(el.get("text", "")).lower() for k in [
+                            "learn more", "view services", "our services", "contact us", "contact", "get a quote",
+                            "get started", "explore", "about us", "products", "pricing", "features", "view details", "shop now"
+                        ])
+                        and is_valid_actionable_selector(el.get("selector", ""))
+                    ]
+                    if cta_btns:
+                        target_el = cta_btns[0]
+                        return {
                             "action": "click",
                             "selector": target_el.get("selector", ""),
                             "value": "",
-                            "reasoning": f"Autonomous heuristic: Clicking action button '{target_el.get('selector')}'."
+                            "reasoning": f"Public Customer Exploration: Engaging primary CTA '{target_el.get('text', '')}' ({target_el.get('selector')})."
                         }
+
+                # 5. General Action buttons on views
+                action_btns = [
+                    el for el in interactive_elements
+                    if str(el.get("tag", "")).lower() in ["button", "a"]
+                    and any(k in str(el.get("text", "")).lower() or k in str(el.get("selector", "")).lower()
+                            for k in (["view", "explore", "read", "details", "next"] if is_public_mode else ["add", "new", "edit", "action", "next", "login"]))
+                    and not (is_public_mode and any(k in str(el.get("text", "")).lower() for k in ["login", "sign in"]))
+                    and is_valid_actionable_selector(el.get("selector", ""))
+                ]
+                if action_btns:
+                    target_el = action_btns[0]
+                    return {
+                        "action": "click",
+                        "selector": target_el.get("selector", ""),
+                        "value": "",
+                        "reasoning": f"Action Prioritization: Clicking action button '{target_el.get('selector')}'."
+                    }
+
+                # 6. Navigation links or menu items
+                nav_links = [
+                    el for el in interactive_elements
+                    if str(el.get("tag", "")).lower() in ["a", "button"]
+                    and any(k in str(el.get("selector", "")).lower() for k in ["nav", "menu", "sidebar", "link", "item", "header", "footer"])
+                    and not (is_public_mode and any(k in str(el.get("text", "")).lower() for k in ["login", "sign in"]))
+                    and is_valid_actionable_selector(el.get("selector", ""))
+                ]
+                if nav_links:
+                    target_el = nav_links[0]
+                    return {
+                        "action": "click",
+                        "selector": target_el.get("selector", ""),
+                        "value": "",
+                        "reasoning": f"Autonomous heuristic: Following navigation link '{target_el.get('selector')}'."
+                    }
 
             return fallback_decision
         except Exception as err:
             logger.warning(f"analyze_screen_and_decide note: {err}")
             return {"action": "scroll", "selector": "", "value": "", "reasoning": "Zero-crash fallback action."}
 
-    def _build_system_prompt(self, context: str, login_credentials: Optional[Dict[str, str]] = None) -> str:
-        creds_context = ""
-        if login_credentials and login_credentials.get("username"):
+    def _build_system_prompt(self, context: str, login_credentials: Optional[Dict[str, str]] = None, is_public_mode: bool = False) -> str:
+        if is_public_mode or not (login_credentials and login_credentials.get("username")):
+            creds_context = """
+AUDIT MODE: PUBLIC GUEST / CUSTOMER MODE (No Credentials Provided)
+* Priority Instructions:
+  - Do NOT look for login selectors, email fields, or submit buttons for login.
+  - Explore as an external customer/visitor directly from public pages.
+  - Traverse top navigation links and customer CTA buttons (e.g. 'Learn More', 'View Services', 'Contact Us').
+  - Test public inquiry/lead/contact forms with realistic fake customer data (Name, Phone, Email, Message).
+  - Check for broken links (HTTP 404), console exceptions, image render failures, and UI overlaps.
+"""
+        else:
             creds_context = f"""
 TARGET LOGIN CREDENTIALS:
 Username: {login_credentials.get('username')}
@@ -949,7 +1220,11 @@ CRITICAL INSTRUCTIONS:
 1. Examine the screenshot and interactive DOM elements.
 2. Select ONE logical action to proceed:
    - "click", "type", "scroll", "navigate", or "finish".
-3. You MUST respond ONLY with a single valid JSON object adhering strictly to this schema:
+3. STRICT SELECTOR CONSTRAINTS:
+   - NEVER target layout-only CSS classes or containers like '.relative', '.flex', '.grid', 'div', 'span'.
+   - 'target_selector' MUST target genuine actionable elements: button, a, input, select, textarea, or elements with explicit role="button".
+   - When encountering a form, ALWAYS fill empty visible input fields with valid data before clicking any submit button (Save, Submit, Create, Confirm).
+4. You MUST respond ONLY with a single valid JSON object adhering strictly to this schema:
 {{
   "action": "click|type|navigate|scroll|finish",
   "target_selector": "CSS selector or element name",
@@ -970,6 +1245,7 @@ CRITICAL INSTRUCTIONS:
         visited_urls: Optional[set] = None,
         login_credentials: Optional[Dict[str, str]] = None,
         state_callback: Optional[Callable] = None,
+        is_public_mode: bool = False,
     ) -> AgentActionResponse:
         
         if not self.model_loaded:
@@ -1010,7 +1286,7 @@ CRITICAL INSTRUCTIONS:
         if state_callback:
             state_callback("Generating Action...")
 
-        system_prompt = self._build_system_prompt(context, login_credentials)
+        system_prompt = self._build_system_prompt(context, login_credentials, is_public_mode=is_public_mode)
         
         interactive_elements = dom_snapshot.get("elements", [])
         elements_summary = json.dumps(interactive_elements[:20], indent=2)
@@ -1072,6 +1348,7 @@ CRITICAL INSTRUCTIONS:
                 visited_urls=visited_urls,
                 login_credentials=login_credentials,
                 step_number=step_number,
+                is_public_mode=is_public_mode,
             )
 
             final_response, sup_warning = self.supervisor.evaluate_and_supervise(
@@ -1082,6 +1359,7 @@ CRITICAL INSTRUCTIONS:
                 step_number=step_number,
                 login_credentials=login_credentials,
                 pending_routes=self.pending_routes,
+                is_public_mode=is_public_mode,
             )
 
             biz_eval = self.business_ux_agent.evaluate_page(dom_snapshot, captured_errors)
@@ -1100,6 +1378,7 @@ CRITICAL INSTRUCTIONS:
                 primary_response=final_response,
                 login_credentials=login_credentials,
                 state_callback=state_callback,
+                is_public_mode=is_public_mode,
             )
 
             if sup_warning and state_callback:
@@ -1120,8 +1399,33 @@ CRITICAL INSTRUCTIONS:
         selector: str,
         login_credentials: Optional[Dict[str, str]] = None,
         is_auth_ctx: bool = False,
+        is_public_mode: bool = False,
     ) -> str:
         comb = f"{el_type} {placeholder} {name} {selector}".lower()
+
+        # Public Visitor / Customer Lead Mode: Never inject admin login credentials
+        if is_public_mode or not login_credentials:
+            if el_type == "password" or "password" in comb or "pass" in comb:
+                return ""
+            if any(k in comb for k in ["email", "mail"]):
+                return "customer@example.com"
+            if any(k in comb for k in ["phone", "mobile", "tel", "cell"]):
+                return "01700000000"
+            if any(k in comb for k in ["name", "contact", "person", "full_name", "first_name", "last_name"]):
+                return "Test Customer QA"
+            if any(k in comb for k in ["subject", "topic", "title"]):
+                return "Customer Product & Service Inquiry"
+            if any(k in comb for k in ["message", "msg", "inquiry", "query", "body", "comment", "note", "desc", "details", "feedback"]):
+                return "Hello, I am interested in your products and services. Please provide more details. Automated QA Verification."
+            if any(k in comb for k in ["address", "city", "location", "street", "state", "zip"]):
+                return "123 Innovation Way, Tech Park"
+            if any(k in comb for k in ["qty", "quantity", "count"]):
+                return "1"
+            if any(k in comb for k in ["price", "budget", "amount", "cost"]) or el_type == "number":
+                return "100"
+            return "Automated QA Public Verification Inquiry"
+
+        # Authenticated Mode:
         if is_auth_ctx:
             if el_type == "password" or "pass" in comb:
                 if login_credentials and login_credentials.get("password"):
@@ -1137,22 +1441,27 @@ CRITICAL INSTRUCTIONS:
         if login_credentials and login_credentials.get("password") and "pass" in comb:
             return login_credentials["password"]
 
+        # Structured Contextual Mock Data
+        if any(k in comb for k in ["qty", "quantity", "count"]):
+            return "2"
+        if any(k in comb for k in ["customer", "client", "buyer", "vendor", "supplier", "owner"]):
+            return "Test Customer QA"
+        if any(k in comb for k in ["phone", "mobile", "tel", "contact"]):
+            return "01700000000"
+        if any(k in comb for k in ["vehicle", "car", "reg", "plate", "license"]):
+            return "DHK-MET-11-2233"
+        if any(k in comb for k in ["price", "cost", "rate", "amount", "total", "balance", "fee"]) or el_type == "number":
+            return "1500"
         if "email" in comb:
-            return "qa_test_user@example.com"
-        if any(k in comb for k in ["phone", "mobile", "tel"]):
-            return "01712345678"
-        if any(k in comb for k in ["price", "amount", "cost", "qty", "quantity", "number", "count", "balance", "total"]):
-            return "100"
+            return "test_customer_qa@example.com"
         if "date" in comb:
-            return "2026-01-01"
-        if "pass" in comb:
-            return "TestPass123!"
-        if "url" in comb:
-            return "https://example.com"
-        if any(k in comb for k in ["code", "sku"]):
-            return "QA-CODE-100"
+            return "2026-08-29"
+        if any(k in comb for k in ["name", "title", "subject"]):
+            return "Test Customer QA"
+        if any(k in comb for k in ["note", "desc", "remark", "comment", "address", "detail", "instruction", "reason"]):
+            return "Automated QA Verification Record"
         
-        return "QA Test Entry Data"
+        return "Automated QA Verification Record"
 
     def _decide_action_from_dom_and_vision(
         self,
@@ -1164,14 +1473,18 @@ CRITICAL INSTRUCTIONS:
         visited_urls: Optional[set],
         login_credentials: Optional[Dict[str, str]],
         step_number: int,
+        is_public_mode: bool = False,
     ) -> AgentActionResponse:
         dom_snapshot = dom_snapshot or {}
         captured_errors = captured_errors or {}
-        interactive_elements = [el for el in (dom_snapshot.get("elements") or []) if isinstance(el, dict)]
+        interactive_elements = [
+            el for el in (dom_snapshot.get("elements") or [])
+            if isinstance(el, dict) and is_valid_actionable_element(el)
+        ]
         anomalies = dom_snapshot.get("anomalies") if isinstance(dom_snapshot.get("anomalies"), dict) else {}
         current_url_low = str(dom_snapshot.get("url", "") or "").lower()
         has_pass_field = any(str((el or {}).get("type", "")).lower() == "password" or "pass" in str((el or {}).get("selector", "")).lower() or "pass" in str((el or {}).get("name", "")).lower() or "pass" in str((el or {}).get("placeholder", "")).lower() for el in interactive_elements)
-        is_auth_ctx = any(k in current_url_low for k in ["/login", "/auth", "/signin", "/sign-in", "login", "auth", "signin"]) or has_pass_field
+        is_auth_ctx = False if is_public_mode else (any(k in current_url_low for k in ["/login", "/auth", "/signin", "/sign-in", "login", "auth", "signin"]) or has_pass_field)
         
         observed_issues = []
         ux_feedback = []
@@ -1185,6 +1498,27 @@ CRITICAL INSTRUCTIONS:
                 v_selectors.add(act.get("target_selector"))
 
         v_urls = set(visited_urls) if visited_urls else set()
+
+        # Public Mode: If accidentally navigated to login view, bypass by returning to public site
+        if is_public_mode and (has_pass_field or any(k in current_url_low for k in ["/login", "/auth", "/signin"])):
+            home_links = [
+                el for el in interactive_elements
+                if str(el.get("tag", "")).lower() in ["a", "button"]
+                and any(k in str(el.get("text", "")).lower() or k in str(el.get("selector", "")).lower() for k in ["home", "back", "logo", "brand", "site", "return"])
+                and is_valid_actionable_selector(el.get("selector", ""))
+                and el.get("selector") not in v_selectors
+            ]
+            if home_links:
+                target_el = home_links[0]
+                return AgentActionResponse(
+                    action="click",
+                    target_selector=target_el.get("selector", ""),
+                    input_value="",
+                    observed_issues=observed_issues,
+                    ux_feedback=ux_feedback,
+                    categorized_issues=categorized,
+                    reasoning=f"Public Visitor Mode: Bypassing authentication page by returning to public site via '{target_el.get('selector')}'.",
+                )
 
         # 1. Visual & Layout Anomalies
         for img_err in (anomalies.get("broken_images") or []):
@@ -1299,6 +1633,8 @@ CRITICAL INSTRUCTIONS:
         # Prioritize Form Controls, Action Buttons, and New Content over repeated sidebar navigation
         unvisited_inputs = []
         unvisited_form_submits = []
+        unvisited_ai_triggers = []
+        unvisited_cta_buttons = []
         unvisited_action_btns = []
         unvisited_content_links = []
         unvisited_sidebar_links = []
@@ -1313,36 +1649,84 @@ CRITICAL INSTRUCTIONS:
             name = str(el.get("name", "")).lower()
             selector = el.get("selector", "")
 
-            if not selector or selector in v_selectors:
+            if not selector or selector in v_selectors or not is_valid_actionable_selector(selector):
                 continue
 
-            # Classify Form Inputs
+            # Classify Form Inputs (detect empty inputs, textareas, and select tags)
             if tag in ["input", "textarea", "select"] and el_type not in ["submit", "button", "hidden", "checkbox", "radio"]:
-                unvisited_inputs.append((selector, tag, el_type, placeholder, name))
+                # In public mode, skip password / login fields
+                if is_public_mode and (el_type == "password" or any(k in f"{selector} {name}".lower() for k in ["password", "login"])):
+                    continue
+                unvisited_inputs.append((selector, tag, el_type, placeholder, name, el.get("first_option", "")))
                 continue
 
-            # Classify Form Submit / Save Buttons
-            if any(k in text for k in ["save", "submit", "add", "create", "store", "update", "confirm", "login", "sign in"]) or el_type == "submit":
-                unvisited_form_submits.append((selector, text))
+            # Classify Form Submit Buttons
+            if tag in ["button", "input"]:
+                if is_public_mode and any(k in text for k in ["login", "sign in"]):
+                    continue
+                submit_keywords = ["save", "submit", "create", "confirm", "send", "contact", "quote", "inquire", "request", "order", "book"]
+                if not is_public_mode:
+                    submit_keywords.extend(["login", "sign in"])
+                if el_type == "submit" or any(k in text for k in submit_keywords):
+                    unvisited_form_submits.append((selector, text))
+                    continue
+
+            # Classify In-App AI triggers (Ask AI, AI Assistant, Generate with AI, sparkle ✨ 🤖)
+            if tag in ["button", "a"] and any(k in text or k in selector.lower() for k in ["ask ai", "generate with ai", "ai assistant", "sparkle", "ai-btn", "✨", "🤖", "bot"]):
+                unvisited_ai_triggers.append((selector, text))
                 continue
+
+            # Classify Public Customer CTA Buttons (Learn More, View Services, Contact Us, Get a Quote)
+            if is_public_mode and (tag in ["button", "a"]):
+                cta_keywords = [
+                    "learn more", "view services", "our services", "contact us", "get a quote",
+                    "get started", "explore", "about us", "products", "pricing", "features",
+                    "view details", "shop now", "book now", "inquire", "order now"
+                ]
+                if any(k in text for k in cta_keywords):
+                    unvisited_cta_buttons.append((selector, text))
+                    continue
 
             # Classify Action / Creation Buttons
-            if tag == "button" or any(k in text for k in ["new", "create", "edit", "action", "plus", "generate", "filter", "search"]):
-                unvisited_action_btns.append((selector, text))
-                continue
+            if tag in ["button", "a"]:
+                if is_public_mode:
+                    if any(k in text for k in ["view", "explore", "details", "read", "next", "more"]):
+                        unvisited_action_btns.append((selector, text))
+                        continue
+                else:
+                    if tag == "button" or any(k in text for k in ["new", "create", "add", "edit", "action", "plus", "generate", "filter", "search"]):
+                        unvisited_action_btns.append((selector, text))
+                        continue
 
             # Classify Sidebar / Nav Links vs General Content Links
-            is_sidebar = any(cls in selector for cls in ["sidebar", "nav", "aside", "drawer", "menu"])
+            is_sidebar = any(cls in selector for cls in ["sidebar", "nav", "aside", "drawer", "menu", "header", "footer"])
             if is_sidebar:
-                unvisited_sidebar_links.append((selector, text))
+                if not (is_public_mode and any(k in text for k in ["login", "sign in"])):
+                    unvisited_sidebar_links.append((selector, text))
             else:
                 unvisited_content_links.append((selector, text))
 
         # Decision Protocol Tree:
         # Step 1: Auto-Fill Form Inputs
         if unvisited_inputs:
-            target_sel, tag, el_type, placeholder, name = unvisited_inputs[0]
-            val_to_type = self._generate_dummy_input_value(tag, el_type, placeholder, name, target_sel, login_credentials, is_auth_ctx=is_auth_ctx)
+            target_sel, tag, el_type, placeholder, name, first_opt = unvisited_inputs[0]
+            if tag == "select":
+                opt_val = first_opt or "1"
+                return AgentActionResponse(
+                    action="select",
+                    target_selector=target_sel,
+                    input_value=opt_val,
+                    observed_issues=observed_issues,
+                    ux_feedback=ux_feedback,
+                    categorized_issues=categorized,
+                    reasoning=f"{'Public Customer Inquiry' if is_public_mode else 'Deep Form Exploration'} Protocol: Selecting first available option '{opt_val}' on dropdown '{target_sel}'.",
+                )
+            val_to_type = self._generate_dummy_input_value(
+                tag, el_type, placeholder, name, target_sel,
+                login_credentials=login_credentials,
+                is_auth_ctx=is_auth_ctx,
+                is_public_mode=is_public_mode,
+            )
             return AgentActionResponse(
                 action="type",
                 target_selector=target_sel,
@@ -1350,7 +1734,7 @@ CRITICAL INSTRUCTIONS:
                 observed_issues=observed_issues,
                 ux_feedback=ux_feedback,
                 categorized_issues=categorized,
-                reasoning=f"Deep Form Exploration Protocol: Auto-filling value into form input field '{target_sel}'.",
+                reasoning=f"{'Public Customer Inquiry' if is_public_mode else 'Deep Form Exploration'} Protocol: Auto-filling value into form input field '{target_sel}'.",
             )
 
         # Step 2: Trigger Form Submit / Save Action
@@ -1363,10 +1747,36 @@ CRITICAL INSTRUCTIONS:
                 observed_issues=observed_issues,
                 ux_feedback=ux_feedback,
                 categorized_issues=categorized,
-                reasoning=f"Deep Form Exploration Protocol: Triggering form submit/action button '{text}' ({target_sel}).",
+                reasoning=f"{'Public Customer Inquiry' if is_public_mode else 'Deep Form Exploration'} Protocol: Triggering form submit/action button '{text}' ({target_sel}).",
             )
 
-        # Step 3: Click Action & Creation Buttons (Add New, Create, Edit)
+        # Step 3: Trigger In-App AI Feature Verification
+        if unvisited_ai_triggers:
+            target_sel, text = unvisited_ai_triggers[0]
+            return AgentActionResponse(
+                action="verify_ai",
+                target_selector=target_sel,
+                input_value="Run complete system diagnostic summary.",
+                observed_issues=observed_issues,
+                ux_feedback=ux_feedback,
+                categorized_issues=categorized,
+                reasoning=f"In-App AI Verification Protocol: Testing embedded AI assistant/generator '{text}' ({target_sel}).",
+            )
+
+        # Step 4: Click Public Customer CTA Buttons (Prioritized for Public Visitor Journey)
+        if unvisited_cta_buttons:
+            target_sel, text = unvisited_cta_buttons[0]
+            return AgentActionResponse(
+                action="click",
+                target_selector=target_sel,
+                input_value="",
+                observed_issues=observed_issues,
+                ux_feedback=ux_feedback,
+                categorized_issues=categorized,
+                reasoning=f"Public Customer Exploration Protocol: Clicking primary customer CTA button '{text}' ({target_sel}).",
+            )
+
+        # Step 5: Click Action & Creation Buttons (Add New, Create, Edit)
         if unvisited_action_btns:
             target_sel, text = unvisited_action_btns[0]
             return AgentActionResponse(
@@ -1379,7 +1789,20 @@ CRITICAL INSTRUCTIONS:
                 reasoning=f"Action Prioritization Protocol: Clicking action button '{text}' ({target_sel}).",
             )
 
-        # Step 4: Click Unvisited Content Links
+        # Step 6: Click Top Navigation & Menu Links
+        if unvisited_sidebar_links:
+            target_sel, text = unvisited_sidebar_links[0]
+            return AgentActionResponse(
+                action="click",
+                target_selector=target_sel,
+                input_value="",
+                observed_issues=observed_issues,
+                ux_feedback=ux_feedback,
+                categorized_issues=categorized,
+                reasoning=f"Navigation Protocol: Exploring navigation link '{text}' ({target_sel}).",
+            )
+
+        # Step 7: Click Unvisited Content Links
         if unvisited_content_links:
             target_sel, text = unvisited_content_links[0]
             return AgentActionResponse(
@@ -1390,19 +1813,6 @@ CRITICAL INSTRUCTIONS:
                 ux_feedback=ux_feedback,
                 categorized_issues=categorized,
                 reasoning=f"Route Traversal Protocol: Clicking unvisited content element '{text}' ({target_sel}).",
-            )
-
-        # Step 5: Click Unvisited Sidebar Navigation Links (Only if no content actions remain)
-        if unvisited_sidebar_links:
-            target_sel, text = unvisited_sidebar_links[0]
-            return AgentActionResponse(
-                action="click",
-                target_selector=target_sel,
-                input_value="",
-                observed_issues=observed_issues,
-                ux_feedback=ux_feedback,
-                categorized_issues=categorized,
-                reasoning=f"Navigation Protocol: Exploring unvisited sidebar navigation link '{text}' ({target_sel}).",
             )
 
         # Step 6: Navigate to pending queued routes if remaining
@@ -1479,40 +1889,60 @@ class VisionInspectorAgent:
 
 class LeadQAStrategistAgent:
     """Agent 2: Lead QA Strategist (Local Google Gemma-2). Plans sequential business workflow actions."""
-    def plan_strategy(self, dom_snapshot: Dict[str, Any], vision_report: Dict[str, Any], login_credentials: Optional[Dict[str, str]] = None) -> Dict[str, Any]:
+    def plan_strategy(
+        self,
+        dom_snapshot: Dict[str, Any],
+        vision_report: Dict[str, Any],
+        login_credentials: Optional[Dict[str, str]] = None,
+        is_public_mode: bool = False,
+    ) -> Dict[str, Any]:
         dom_snapshot = dom_snapshot or {}
         current_url = str(dom_snapshot.get("url", "") or "").lower()
-        elements = dom_snapshot.get("elements", []) or []
-        unvisited_inputs = [el for el in elements if isinstance(el, dict) and str(el.get("tag", "")).lower() in ["input", "textarea", "select"]]
+        elements = [el for el in (dom_snapshot.get("elements", []) or []) if isinstance(el, dict) and is_valid_actionable_element(el)]
+        
+        unvisited_inputs = [
+            el for el in elements
+            if str(el.get("tag", "")).lower() in ["input", "textarea", "select"]
+            and not (is_public_mode and str(el.get("type", "")).lower() == "password")
+            and is_valid_actionable_selector(el.get("selector", ""))
+        ]
 
         if unvisited_inputs:
             target_el = unvisited_inputs[0]
             sel = target_el.get("selector", "")
             return {
                 "agent": "Lead QA Strategist (Gemma-2)",
-                "goal": f"Fill form input field on route '{current_url[:30]}'",
+                "goal": f"{'Fill public customer inquiry field' if is_public_mode else 'Fill form input field'} on route '{current_url[:30]}'",
                 "recommended_action": "type",
                 "target_selector": sel,
                 "input_data": "QA Test Entry Data",
-                "reasoning": f"Gemma-2 Strategy: Populating unvisited form input '{sel}' to advance form state."
+                "reasoning": f"Gemma-2 Strategy: Populating {'public customer form' if is_public_mode else 'unvisited form input'} '{sel}'."
             }
 
-        action_btns = [el for el in elements if isinstance(el, dict) and any(k in str(el.get("text", "")).lower() for k in ["save", "submit", "add", "create", "login"])]
+        action_btns = [
+            el for el in elements
+            if any(k in str(el.get("text", "")).lower() for k in (
+                ["learn more", "contact", "services", "quote", "submit", "send"] if is_public_mode
+                else ["save", "submit", "add", "create", "login"]
+            ))
+            and not (is_public_mode and any(k in str(el.get("text", "")).lower() for k in ["login", "sign in"]))
+            and is_valid_actionable_selector(el.get("selector", ""))
+        ]
         if action_btns:
             target_el = action_btns[0]
             sel = target_el.get("selector", "")
             return {
                 "agent": "Lead QA Strategist (Gemma-2)",
-                "goal": f"Submit form / Trigger primary action",
+                "goal": "Engage primary public CTA / customer action" if is_public_mode else "Submit form / Trigger primary action",
                 "recommended_action": "click",
                 "target_selector": sel,
                 "input_data": "",
-                "reasoning": f"Gemma-2 Strategy: Triggering action button '{sel}' for business workflow progression."
+                "reasoning": f"Gemma-2 Strategy: Triggering action element '{sel}' for {'public customer journey' if is_public_mode else 'business workflow'} progression."
             }
 
         return {
             "agent": "Lead QA Strategist (Gemma-2)",
-            "goal": "Explore internal navigation routes",
+            "goal": "Explore public navigation routes" if is_public_mode else "Explore internal navigation routes",
             "recommended_action": "scroll",
             "target_selector": "",
             "input_data": "",
@@ -1522,9 +1952,17 @@ class LeadQAStrategistAgent:
 
 class SecurityRBACAuditorAgent:
     """Agent 3: Security & RBAC Auditor. Validates permission boundaries and broken access controls."""
-    def audit_security(self, dom_snapshot: Dict[str, Any]) -> Dict[str, Any]:
+    def audit_security(self, dom_snapshot: Dict[str, Any], is_public_mode: bool = False) -> Dict[str, Any]:
         dom_snapshot = dom_snapshot or {}
         current_url = str(dom_snapshot.get("url", "") or "").lower()
+        if is_public_mode:
+            is_internal_exposed = any(k in current_url for k in ["/settings", "/users", "/admin", "/roles", "/dashboard"])
+            return {
+                "agent": "Security & RBAC Auditor",
+                "is_admin_area": is_internal_exposed,
+                "security_warning": "⚠️ Security Alert: Public visitor accessed internal administrative route!" if is_internal_exposed else "🌐 Public Guest Scope Verified: No internal administrative panels exposed."
+            }
+
         is_admin_area = any(k in current_url for k in ["/settings", "/users", "/admin", "/roles"])
         return {
             "agent": "Security & RBAC Auditor",
@@ -1546,7 +1984,8 @@ class MultiAgentConsensusEngine:
         visual_caption: str,
         primary_response: AgentActionResponse,
         login_credentials: Optional[Dict[str, str]] = None,
-        state_callback: Optional[Callable[[str], None]] = None
+        state_callback: Optional[Callable[[str], None]] = None,
+        is_public_mode: bool = False,
     ) -> tuple[AgentActionResponse, List[str]]:
         debates: List[str] = []
 
@@ -1558,14 +1997,14 @@ class MultiAgentConsensusEngine:
             state_callback(msg1)
 
         # Step 2: Lead QA Strategist Debate
-        strat_plan = self.qa_strategist.plan_strategy(dom_snapshot, v_report, login_credentials)
+        strat_plan = self.qa_strategist.plan_strategy(dom_snapshot, v_report, login_credentials, is_public_mode=is_public_mode)
         msg2 = f"🧠 [Lead QA Strategist (Gemma-2)]: Proposed Goal -> '{strat_plan['goal']}' | Action: {strat_plan['recommended_action'].upper()} ({strat_plan['target_selector']})"
         debates.append(msg2)
         if state_callback:
             state_callback(msg2)
 
         # Step 3: Security & RBAC Audit
-        sec_report = self.rbac_auditor.audit_security(dom_snapshot)
+        sec_report = self.rbac_auditor.audit_security(dom_snapshot, is_public_mode=is_public_mode)
         msg3 = f"🔒 [Security Auditor]: {sec_report['security_warning']}"
         debates.append(msg3)
         if state_callback:

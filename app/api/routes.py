@@ -137,12 +137,12 @@ async def execute_agent_task(
                 if pending:
                     loop.run_until_complete(asyncio.gather(*pending, return_exceptions=True))
                 loop.run_until_complete(loop.shutdown_asyncgens())
-            except Exception:
-                pass
+            except Exception as clean_err:
+                logger.debug(f"Runner thread task cancel cleanup notice: {clean_err}")
             try:
                 loop.close()
-            except Exception:
-                pass
+            except Exception as close_err:
+                logger.debug(f"Runner thread loop close notice: {close_err}")
 
     try:
         report_data = await asyncio.to_thread(_run_agent_in_thread)
@@ -170,8 +170,18 @@ async def execute_agent_task(
             "summary": summary,
             "error": comp_reason if is_failed else None,
         })
+
+        # Automatic Retention Policy: Retain only latest 3 runs while strictly preserving AI Vector Memory
+        try:
+            retention_stats = await database.prune_old_test_runs(keep_latest=3, storage_dir=settings.STORAGE_DIR)
+            if retention_stats.get("deleted_runs_count", 0) > 0:
+                logger.info(f"🧹 Retention Policy: Kept latest 3 runs, pruned {retention_stats['deleted_runs_count']} old runs ({retention_stats.get('freed_mb', 0)} MB freed).")
+        except Exception as ret_err:
+            logger.warning(f"⚠️ Non-fatal retention policy notice: {ret_err}")
+
         return summary
     except Exception as e:
+        logger.exception(f"Unhandled exception in execute_agent_task for run [{run_id}]: {e}")
         err_msg = str(e)
         await database.update_test_run_status(run_id=run_id, status=f"failed: {err_msg}")
         await ws_manager.broadcast({
@@ -180,47 +190,96 @@ async def execute_agent_task(
             "target_url": target_url,
             "error": err_msg,
         })
+
+        # Automatic Retention Policy on failure as well
+        try:
+            await database.prune_old_test_runs(keep_latest=3, storage_dir=settings.STORAGE_DIR)
+        except Exception as ret_err:
+            logger.warning(f"⚠️ Non-fatal retention policy notice on failure: {ret_err}")
+
         return {"run_id": run_id, "target_url": target_url, "completed_reason": f"failed: {err_msg}", "critical_bugs": [err_msg]}
 
 
 async def execute_batch_agent_tasks(batch_id: str, req: BatchRunRequest):
     """Executes multiple AgentRunners in parallel using asyncio.gather() and generates Master Batch Report."""
-    await ws_manager.broadcast({
-        "type": "BATCH_STARTED",
-        "batch_id": batch_id,
-        "total_apps": len(req.apps),
-    })
+    try:
+        await ws_manager.broadcast({
+            "type": "BATCH_STARTED",
+            "batch_id": batch_id,
+            "total_apps": len(req.apps),
+        })
 
-    model = req.model_name or settings.LOCAL_MODEL_NAME
+        model = req.model_name or settings.LOCAL_MODEL_NAME
 
-    async def _run_single(idx: int, app: AppTarget):
-        # Generate isolated run_id per app
-        clean_name = app.target_url.replace("http://", "").replace("https://", "").replace(":", "_").replace("/", "_")[:20]
-        run_id = f"{batch_id}_app{idx+1}_{clean_name}"
-        return await execute_agent_task(
-            run_id=run_id,
-            target_url=app.target_url,
-            username=app.username,
-            password=app.password,
-            max_steps=req.max_steps,
-            model_name=model,
-            headless=req.headless,
-        )
+        async def _run_single(idx: int, app: AppTarget):
+            # Generate isolated run_id per app
+            clean_name = app.target_url.replace("http://", "").replace("https://", "").replace(":", "_").replace("/", "_")[:20]
+            run_id = f"{batch_id}_app{idx+1}_{clean_name}"
+            return await execute_agent_task(
+                run_id=run_id,
+                target_url=app.target_url,
+                username=app.username,
+                password=app.password,
+                max_steps=req.max_steps,
+                model_name=model,
+                headless=req.headless,
+            )
 
-    # Run all apps concurrently
-    summaries = await asyncio.gather(*[_run_single(idx, app) for idx, app in enumerate(req.apps)])
-    
-    # Generate Master Batch Audit Report
-    master_report = generate_master_batch_report(batch_id, list(summaries), settings.STORAGE_DIR)
+        # Run all apps concurrently
+        summaries = await asyncio.gather(*[_run_single(idx, app) for idx, app in enumerate(req.apps)], return_exceptions=True)
+        valid_summaries = [s for s in summaries if isinstance(s, dict)]
+        
+        # Generate Master Batch Audit Report
+        master_report = generate_master_batch_report(batch_id, valid_summaries, settings.STORAGE_DIR)
 
-    await ws_manager.broadcast({
-        "type": "BATCH_COMPLETED",
-        "batch_id": batch_id,
-        "master_report": master_report,
-    })
+        await ws_manager.broadcast({
+            "type": "BATCH_COMPLETED",
+            "batch_id": batch_id,
+            "master_report": master_report,
+        })
+
+        # Enforce Automatic Retention Policy for batch runs
+        try:
+            await database.prune_old_test_runs(keep_latest=3, storage_dir=settings.STORAGE_DIR)
+        except Exception as ret_err:
+            logger.warning(f"⚠️ Batch retention policy notice: {ret_err}")
+    except Exception as e:
+        logger.exception(f"Unhandled exception in batch run [{batch_id}]: {e}")
+        await ws_manager.broadcast({
+            "type": "BATCH_FAILED",
+            "batch_id": batch_id,
+            "error": str(e),
+        })
 
 
 active_tasks: Dict[str, asyncio.Task] = {}
+
+
+def _handle_task_done(task_id: str, t: asyncio.Task):
+    """Cleanly prunes completed tasks from active_tasks registry and logs any unhandled exceptions."""
+    active_tasks.pop(task_id, None)
+    try:
+        if not t.cancelled():
+            exc = t.exception()
+            if exc:
+                logger.error(f"Background task [{task_id}] failed with unhandled exception: {exc}", exc_info=exc)
+    except Exception as ex:
+        logger.error(f"Error checking status for completed task [{task_id}]: {ex}")
+
+
+@router.post("/runs/cleanup")
+async def trigger_retention_cleanup(keep_latest: int = 3):
+    """
+    Automatic Retention Policy Endpoint:
+    Retains only the latest `keep_latest` audit runs in SQLite DB and filesystem,
+    while strictly preserving AI ChromaDB vector memory.
+    """
+    result = await database.prune_old_test_runs(keep_latest=keep_latest, storage_dir=settings.STORAGE_DIR)
+    return {
+        "status": "success",
+        "message": f"Retention policy executed. Retained latest {keep_latest} runs; pruned {result.get('deleted_runs_count', 0)} older runs.",
+        "details": result,
+    }
 
 
 @router.post("/runs")
@@ -241,7 +300,7 @@ async def start_test_run(req: RunRequest, background_tasks: BackgroundTasks):
         )
     )
     active_tasks[run_id] = task
-    task.add_done_callback(lambda t: active_tasks.pop(run_id, None))
+    task.add_done_callback(lambda t: _handle_task_done(run_id, t))
 
     return {
         "status": "started",
@@ -265,7 +324,7 @@ async def start_batch_test_run(req: BatchRunRequest, background_tasks: Backgroun
         )
     )
     active_tasks[batch_id] = task
-    task.add_done_callback(lambda t: active_tasks.pop(batch_id, None))
+    task.add_done_callback(lambda t: _handle_task_done(batch_id, t))
 
     return {
         "status": "started",
@@ -276,9 +335,9 @@ async def start_batch_test_run(req: BatchRunRequest, background_tasks: Backgroun
 
 
 @router.get("/runs")
-async def list_runs():
-    """Returns list of past test runs."""
-    runs = await database.get_test_runs()
+async def list_runs(limit: int = 3):
+    """Returns list of recent test runs (retaining latest 3 in UI)."""
+    runs = await database.get_test_runs(limit=limit)
     return {"runs": runs}
 
 
@@ -390,6 +449,7 @@ async def download_report_docx(run_id: str):
             filename=f"{run_id}_audit_report.docx"
         )
     except Exception as err:
+        logger.warning(f"Rich docx template generation failed for run [{run_id}]: {err}. Attempting minimal fallback docx.", exc_info=True)
         # Fallback to minimal docx generation if template generation throws an error
         try:
             from docx import Document
@@ -403,6 +463,7 @@ async def download_report_docx(run_id: str):
                 filename=f"{run_id}_audit_report.docx"
             )
         except Exception as final_err:
+            logger.error(f"Minimal fallback docx generation also failed for run [{run_id}]: {final_err}", exc_info=True)
             raise HTTPException(status_code=500, detail=f"Failed to generate report: {str(final_err)}")
 
 

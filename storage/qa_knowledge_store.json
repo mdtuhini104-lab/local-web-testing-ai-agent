@@ -45,9 +45,214 @@
         "http://localhost:3000/login"
       ],
       "lesson": "Corrective RAG Rule for 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > select.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs.disabled\\:opacity-60': Add DOM stability delay before interacting with 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > select.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs.disabled\\:opacity-60'"
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Network Anomaly: PATCH http://localhost:8000/backend/api/notifications/read-all - Status 404 (HTTP 4. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Console Anomaly (ERROR): Failed to load resource: the server responded with a status of 404 (Not Fou. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Critical Data Persistence Failure: Form submission on selector 'html.__variable_f367f3 > body.__clas. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Network/API Error (PATCH http://localhost:8000/backend/api/notifications/read-all): HTTP 404 Not Fou. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Console ERROR: Failed to load resource: the server responded with a status of 404 (Not Found) at htt. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Network Anomaly: PATCH http://localhost:8000/backend/api/notifications/read-all - Status 404 (HTTP 4. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Console Anomaly (ERROR): Failed to load resource: the server responded with a status of 404 (Not Fou. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Network Anomaly: POST http://localhost:8000/backend/api/notifications/clear-all - Status 404 (HTTP 4. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Console Anomaly (ERROR): Failed to load resource: the server responded with a status of 404 (Not Fou. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Critical Data Persistence Failure: Form submission on selector 'html.__variable_f367f3 > body.__clas. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Network/API Error (PATCH http://localhost:8000/backend/api/notifications/read-all): HTTP 404 Not Fou. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Console ERROR: Failed to load resource: the server responded with a status of 404 (Not Found) at htt. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Critical Data Persistence Failure: Form submission on selector 'html.__variable_f367f3 > body.__clas. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Network/API Error (POST http://localhost:8000/backend/api/notifications/clear-all): HTTP 404 Not Fou. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "http://localhost:3000/login"
+      ],
+      "lesson": "On target 'http://localhost:3000/login', issue encountered: Console ERROR: Failed to load resource: the server responded with a status of 404 (Not Found) at htt. Ensure rigorous validation check on input fields."
     }
   ],
-  "discovered_vulnerabilities": [],
+  "discovered_vulnerabilities": [
+    {
+      "run_id": "run_20260903_012019",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Layout Overlap detected between 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.flex.flex-col.bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden > nav.flex-1.min-h-0.overflow-y-auto.p-3.space-y-1.hide-scrollbar > div.space-y-0\\.5 > button.w-full.flex.items-center.justify-between.px-3.py-2.rounded-lg.text-xs.font-bold.text-slate-800.hover\\:bg-slate-50.transition.cursor-pointer' and 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.flex.flex-col.bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden > div.p-3.border-t.border-slate-200.bg-white.shrink-0.shadow-\\[0_-4px_12px_rgba\\(0\\,0\\,0\\,0\\.05\\)\\].z-40.space-y-1 > a.flex.items-center.gap-3.px-3.py-2.rounded-lg.text-xs.font-bold.transition.text-slate-700.hover\\:bg-slate-50.hover\\:text-slate-900'",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_012019",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Network Anomaly: PATCH http://localhost:8000/backend/api/notifications/read-all - Status 404 (HTTP 404 Not Found)",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_012019",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Console Anomaly (ERROR): Failed to load resource: the server responded with a status of 404 (Not Found) at http://localhost:8000/backend/api/notifications/read-all:0",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_012019",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Critical Data Persistence Failure: Form submission on selector 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.absolute.right-0.mt-2.w-80.sm\\:w-96.bg-white.dark\\:bg-slate-800.border.border-slate-200.dark\\:border-slate-700.rounded-2xl.shadow-2xl.z-50.overflow-hidden.text-slate-800.dark\\:text-slate-100 > div.p-3\\.5.border-b.border-slate-100.dark\\:border-slate-700\\/60.flex.items-center.justify-between.bg-slate-50\\/50.dark\\:bg-slate-800\\/50 > div.flex.items-center.gap-2.text-xs > button.text-slate-400.hover\\:text-rose-600.font-medium' failed via network error / API rejection. DB record was not created.",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_012019",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Network/API Error (PATCH http://localhost:8000/backend/api/notifications/read-all): HTTP 404 Not Found",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_012019",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Console ERROR: Failed to load resource: the server responded with a status of 404 (Not Found) at http://localhost:8000/backend/api/notifications/read-all:0",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_013429",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Layout Overlap detected between 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.grid.grid-rows-\\[auto_1fr_auto\\].bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden > nav.overflow-y-auto.p-3.space-y-1.hide-scrollbar > div.space-y-0\\.5 > button.w-full.flex.items-center.justify-between.px-3.py-2.rounded-lg.text-xs.font-bold.text-slate-800.hover\\:bg-slate-50.transition.cursor-pointer' and 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.grid.grid-rows-\\[auto_1fr_auto\\].bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden > div.p-3.border-t.border-slate-200.bg-white.shadow-\\[0_-4px_12px_rgba\\(0\\,0\\,0\\,0\\.05\\)\\].z-40.space-y-1 > a.flex.items-center.gap-3.px-3.py-2.rounded-lg.text-xs.font-bold.transition.text-slate-700.hover\\:bg-slate-50.hover\\:text-slate-900'",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_013429",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Network Anomaly: PATCH http://localhost:8000/backend/api/notifications/read-all - Status 404 (HTTP 404 Not Found)",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_013429",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Console Anomaly (ERROR): Failed to load resource: the server responded with a status of 404 (Not Found) at http://localhost:8000/backend/api/notifications/read-all:0",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_013429",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Network Anomaly: POST http://localhost:8000/backend/api/notifications/clear-all - Status 404 (HTTP 404 Not Found)",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_013429",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Console Anomaly (ERROR): Failed to load resource: the server responded with a status of 404 (Not Found) at http://localhost:8000/backend/api/notifications/clear-all:0",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_013429",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Critical Data Persistence Failure: Form submission on selector 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.absolute.right-0.mt-2.w-80.sm\\:w-96.bg-white.dark\\:bg-slate-800.border.border-slate-200.dark\\:border-slate-700.rounded-2xl.shadow-2xl.z-50.overflow-hidden.text-slate-800.dark\\:text-slate-100 > div.p-3\\.5.border-b.border-slate-100.dark\\:border-slate-700\\/60.flex.items-center.justify-between.bg-slate-50\\/50.dark\\:bg-slate-800\\/50 > div.flex.items-center.gap-2.text-xs > button.text-slate-400.hover\\:text-rose-600.font-medium' failed via network error / API rejection. DB record was not created.",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_013429",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Network/API Error (PATCH http://localhost:8000/backend/api/notifications/read-all): HTTP 404 Not Found",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_013429",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Console ERROR: Failed to load resource: the server responded with a status of 404 (Not Found) at http://localhost:8000/backend/api/notifications/read-all:0",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_013429",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Critical Data Persistence Failure: Form submission on selector 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.absolute.right-0.mt-2.w-80.sm\\:w-96.bg-white.dark\\:bg-slate-800.border.border-slate-200.dark\\:border-slate-700.rounded-2xl.shadow-2xl.z-50.overflow-hidden.text-slate-800.dark\\:text-slate-100 > div.flex.items-center.gap-1.p-2.border-b.border-slate-100.dark\\:border-slate-700\\/60.overflow-x-auto.text-\\[11px\\].hide-scrollbar > button.px-2\\.5.py-1.rounded-md.font-semibold.transition-colors.whitespace-nowrap.bg-slate-900.text-white.dark\\:bg-slate-100.dark\\:text-slate-900' failed via network error / API rejection. DB record was not created.",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_013429",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Network/API Error (POST http://localhost:8000/backend/api/notifications/clear-all): HTTP 404 Not Found",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260903_013429",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Console ERROR: Failed to load resource: the server responded with a status of 404 (Not Found) at http://localhost:8000/backend/api/notifications/clear-all:0",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260904_000022",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Layout Overlap detected between 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.flex.flex-col.bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden > nav.flex-1.overflow-y-auto.p-3.space-y-1.hide-scrollbar > div.space-y-1 > div.space-y-0\\.5 > div.overflow-hidden.pl-9.pr-1.py-1.space-y-1.border-l.ml-5 > a.block.px-2\\.5.py-1\\.5.rounded-md.text-xs.transition.text-slate-600.font-medium.hover\\:bg-slate-50.hover\\:text-slate-900' and 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.flex.flex-col.bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden > div.p-3.border-t.border-slate-200.bg-white.shrink-0.shadow-\\[0_-4px_12px_rgba\\(0\\,0\\,0\\,0\\.05\\)\\].z-40.space-y-1 > a.flex.items-center.gap-3.px-3.py-2.rounded-lg.text-xs.font-bold.transition.text-slate-700.hover\\:bg-slate-50.hover\\:text-slate-900'",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260904_000557",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Layout Overlap detected between 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.flex.flex-col.bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden.relative > nav.flex-1.min-h-0.overflow-y-auto.p-3.pb-32.space-y-1.hide-scrollbar.relative.z-10 > div.space-y-1 > div.space-y-0\\.5 > div.overflow-hidden.pl-9.pr-1.py-1.space-y-1.border-l.ml-5.mb-2 > a.block.px-2\\.5.py-1\\.5.rounded-md.text-xs.transition.text-slate-600.font-medium.hover\\:bg-slate-50.hover\\:text-slate-900' and 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.flex.flex-col.bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden.relative > div.p-3.border-t.border-slate-200.bg-white.shrink-0.shadow-\\[0_-4px_12px_rgba\\(0\\,0\\,0\\,0\\.05\\)\\].relative.z-30.mt-auto.space-y-1 > a.flex.items-center.gap-3.px-3.py-2.rounded-lg.text-xs.font-bold.transition.text-slate-700.hover\\:bg-slate-50.hover\\:text-slate-900'",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    }
+  ],
   "step_experiences": [
     {
       "target_url": "http://localhost:3000/login",
@@ -229,6 +434,1558 @@
       "target_url": "http://localhost:3000/login",
       "action": "click",
       "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.space-y-6.max-w-7xl.mx-auto > div.flex.flex-col.sm\\:flex-row.sm\\:items-center.sm\\:justify-between.gap-4 > div.flex.gap-2 > a.px-3\\.5.py-2.bg-\\[\\#004e89\\].text-white.rounded-lg.text-xs.font-semibold.hover\\:bg-\\[\\#003d6c\\].transition-colors.shadow-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.space-y-6.max-w-7xl.mx-auto > div.flex.flex-col.sm\\:flex-row.sm\\:items-center.sm\\:justify-between.gap-4 > div.flex.gap-2 > a.px-3\\.5.py-2.bg-\\[\\#004e89\\].text-white.rounded-lg.text-xs.font-semibold.hover\\:bg-\\[\\#003d6c\\].transition-colors.shadow-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > input.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-2 > textarea.w-full.border.border-slate-300.rounded.p-2.text-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.flex.items-center.justify-between.text-xs.gap-2 > div.flex.gap-1.w-48 > input.h-8.border.border-slate-300.rounded.text-xs.px-2.w-full",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.flex.items-center.justify-between.text-xs.gap-2 > input.h-8.border.border-slate-300.rounded.text-xs.px-2.w-32",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.border.border-slate-200.rounded-lg.p-4.space-y-3 > div.flex.gap-2.pt-2 > button.px-3.py-1\\.5.border.border-blue-500.text-blue-600.rounded.text-xs.font-medium.hover\\:bg-blue-50.flex.items-center.gap-1",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.border.border-slate-200.rounded-lg.p-4.space-y-3 > table.w-full.text-left.text-xs > tbody > tr.border-b.border-slate-100.hover\\:bg-slate-50 > td.py-2.px-2 > div.relative.w-full > div.relative.flex.items-center > input.w-full.text-xs.px-3.py-2.border.border-slate-300.dark\\:border-slate-700.rounded-lg.dark\\:bg-slate-800.dark\\:text-slate-100.focus\\:ring-2.focus\\:ring-blue-500.focus\\:outline-none.transition",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.border.border-slate-200.rounded-lg.p-4.space-y-3 > table.w-full.text-left.text-xs > tbody > tr.border-b.border-slate-100.hover\\:bg-slate-50 > td.py-2.px-2 > input.w-full.h-8.border.border-slate-300.rounded.px-2.text-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"unit\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.border.border-slate-200.rounded-lg.p-4.space-y-3 > div.flex.gap-2.pt-2 > button.px-3.py-1\\.5.border.border-purple-500.text-purple-600.rounded.text-xs.font-medium.hover\\:bg-purple-50.flex.items-center.gap-1",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.flex.justify-end.gap-2.pt-2 > button.px-4.py-2.border.rounded.text-xs.font-medium.hover\\:bg-slate-50.disabled\\:opacity-50",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.h-full.flex.flex-col.font-sans.text-slate-800.dark\\:text-slate-100 > div.flex.flex-col.lg\\:flex-row.lg\\:items-center.justify-between.gap-4.mb-4 > div.flex.flex-wrap.items-center.gap-3 > div.flex.items-center.gap-2 > input.py-2.px-3.text-xs.rounded-lg.border.border-slate-200.dark\\:border-slate-700.bg-transparent.outline-none.focus\\:border-\\[\\#004e89\\]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.h-full.flex.flex-col.font-sans.text-slate-800.dark\\:text-slate-100 > div.flex.flex-col.lg\\:flex-row.lg\\:items-center.justify-between.gap-4.mb-4 > div.flex.flex-wrap.items-center.gap-3 > div.relative > input.w-56.py-2.px-3.pl-9.text-xs.rounded-lg.border.border-slate-200.dark\\:border-slate-700.focus\\:border-\\[\\#004e89\\].outline-none.bg-transparent",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.flex.flex-col.bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden > nav.flex-1.min-h-0.overflow-y-auto.p-3.space-y-1.hide-scrollbar > div.space-y-0\\.5 > button.w-full.flex.items-center.justify-between.px-3.py-2.rounded-lg.text-xs.font-bold.text-slate-800.hover\\:bg-slate-50.transition.cursor-pointer",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > button.relative.p-2.text-slate-600.dark\\:text-slate-300.hover\\:bg-slate-100.dark\\:hover\\:bg-slate-700.rounded-full.transition-colors.focus\\:outline-none",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.absolute.right-0.mt-2.w-80.sm\\:w-96.bg-white.dark\\:bg-slate-800.border.border-slate-200.dark\\:border-slate-700.rounded-2xl.shadow-2xl.z-50.overflow-hidden.text-slate-800.dark\\:text-slate-100 > div.p-3\\.5.border-b.border-slate-100.dark\\:border-slate-700\\/60.flex.items-center.justify-between.bg-slate-50\\/50.dark\\:bg-slate-800\\/50 > div.flex.items-center.gap-2.text-xs > button.text-blue-600.hover\\:text-blue-700.dark\\:text-blue-400.font-semibold.hover\\:underline",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.absolute.right-0.mt-2.w-80.sm\\:w-96.bg-white.dark\\:bg-slate-800.border.border-slate-200.dark\\:border-slate-700.rounded-2xl.shadow-2xl.z-50.overflow-hidden.text-slate-800.dark\\:text-slate-100 > div.p-3\\.5.border-b.border-slate-100.dark\\:border-slate-700\\/60.flex.items-center.justify-between.bg-slate-50\\/50.dark\\:bg-slate-800\\/50 > div.flex.items-center.gap-2.text-xs > button.text-slate-400.hover\\:text-rose-600.font-medium",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.absolute.right-0.mt-2.w-80.sm\\:w-96.bg-white.dark\\:bg-slate-800.border.border-slate-200.dark\\:border-slate-700.rounded-2xl.shadow-2xl.z-50.overflow-hidden.text-slate-800.dark\\:text-slate-100 > div.flex.items-center.gap-1.p-2.border-b.border-slate-100.dark\\:border-slate-700\\/60.overflow-x-auto.text-\\[11px\\].hide-scrollbar > button.px-2\\.5.py-1.rounded-md.font-semibold.transition-colors.whitespace-nowrap.bg-slate-900.text-white.dark\\:bg-slate-100.dark\\:text-slate-900",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.absolute.right-0.mt-2.w-80.sm\\:w-96.bg-white.dark\\:bg-slate-800.border.border-slate-200.dark\\:border-slate-700.rounded-2xl.shadow-2xl.z-50.overflow-hidden.text-slate-800.dark\\:text-slate-100 > div.flex.items-center.gap-1.p-2.border-b.border-slate-100.dark\\:border-slate-700\\/60.overflow-x-auto.text-\\[11px\\].hide-scrollbar > button.px-2\\.5.py-1.rounded-md.font-semibold.transition-colors.whitespace-nowrap.text-slate-600.dark\\:text-slate-400.hover\\:bg-slate-100.dark\\:hover\\:bg-slate-700",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > button.flex.items-center.gap-2\\.5.p-1\\.5.rounded-full.hover\\:bg-slate-100.dark\\:hover\\:bg-slate-700.transition.focus\\:outline-none.cursor-pointer.select-none",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.w-64.bg-white.dark\\:bg-slate-800.rounded-2xl.shadow-xl.border.border-slate-100.dark\\:border-slate-700.p-2.space-y-2.z-50.absolute.right-0.top-11.font-sans.text-xs > div.space-y-0\\.5.pt-1 > button.w-full.flex.items-center.gap-2\\.5.p-2.rounded-xl.text-slate-700.dark\\:text-slate-200.hover\\:bg-slate-50.dark\\:hover\\:bg-slate-700.font-semibold.transition.text-left.cursor-pointer",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"workshopName\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"tagline\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "textarea[name=\"address\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"phone\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"email\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"binNumber\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"currencySymbol\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex.h-screen.w-full.bg-slate-50.dark\\:bg-slate-900.font-sans.overflow-hidden > main.flex-1.overflow-y-auto.p-8.bg-white.dark\\:bg-slate-900 > div.p-6.space-y-6.max-w-4xl.mx-auto.text-slate-800 > form.bg-white.p-6.rounded-xl.border.border-slate-200.shadow-xs.space-y-6",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex.h-screen.w-full.bg-slate-50.dark\\:bg-slate-900.font-sans.overflow-hidden > main.flex-1.overflow-y-auto.p-8.bg-white.dark\\:bg-slate-900 > div.p-6.space-y-6.max-w-4xl.mx-auto.text-slate-800 > form.bg-white.p-6.rounded-xl.border.border-slate-200.shadow-xs.space-y-6 > div.pt-4.border-t.border-slate-100.flex.justify-end > button.px-5.py-2.bg-\\[\\#004e89\\].text-white.rounded-lg.text-xs.font-bold.hover\\:bg-\\[\\#003d6c\\].transition-colors.shadow-sm",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex.h-screen.w-full.bg-slate-50.dark\\:bg-slate-900.font-sans.overflow-hidden > aside.w-64.bg-white.dark\\:bg-slate-800.border-r.border-slate-200.dark\\:border-slate-700.flex.flex-col.p-4.space-y-5.select-none.shrink-0 > div.flex-1.overflow-y-auto.space-y-4.pr-1.hide-scrollbar > div.space-y-1 > div.space-y-0\\.5 > div.pt-1 > button.w-full.flex.items-center.justify-between.px-3.py-1\\.5.text-xs.font-bold.text-slate-700.dark\\:text-slate-300.hover\\:bg-slate-50.dark\\:hover\\:bg-slate-700\\/40.rounded-lg.transition",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex.h-screen.w-full.bg-slate-50.dark\\:bg-slate-900.font-sans.overflow-hidden > main.flex-1.overflow-y-auto.p-8.bg-white.dark\\:bg-slate-900 > div.p-6.space-y-6.max-w-4xl.mx-auto.text-slate-800 > div.flex.justify-between.items-center > a.px-3\\.5.py-1\\.5.bg-white.border.border-slate-300.rounded-lg.text-xs.font-semibold.hover\\:bg-slate-50.text-slate-700.transition-colors.shadow-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.space-y-6.max-w-7xl.mx-auto > div.flex.flex-col.sm\\:flex-row.sm\\:items-center.sm\\:justify-between.gap-4 > div.flex.gap-2 > a.px-3\\.5.py-2.bg-white.text-slate-700.border.border-slate-300.rounded-lg.text-xs.font-semibold.hover\\:bg-slate-50.transition-colors.shadow-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.xl\\:grid-cols-4.gap-x-4.gap-y-3 > div > input.w-full.h-8.py-1.px-2\\.5.text-xs.text-slate-800.dark\\:text-slate-100.bg-transparent.rounded.border.border-slate-300.dark\\:border-slate-700.focus\\:ring-1.focus\\:ring-\\[\\#004e89\\].outline-none.transition-colors",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.xl\\:grid-cols-4.gap-x-4.gap-y-3 > div.xl\\:col-span-2 > textarea.w-full.h-auto.py-1\\.5.px-2\\.5.text-xs.text-slate-800.dark\\:text-slate-100.bg-transparent.rounded.border.border-slate-300.dark\\:border-slate-700.focus\\:ring-1.focus\\:ring-\\[\\#004e89\\].outline-none.transition-colors.resize-none",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.flex.flex-col.xl\\:flex-row.gap-4 > div.xl\\:w-1\\/3 > textarea.w-full.py-1\\.5.px-2\\.5.text-xs.text-slate-800.dark\\:text-slate-100.bg-transparent.rounded.border.border-slate-300.dark\\:border-slate-700.focus\\:ring-1.focus\\:ring-\\[\\#004e89\\].outline-none.transition-colors.resize-none",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.flex.justify-between.items-center.mb-3 > div.flex.gap-2 > button.h-7.px-2.text-xs.font-medium.text-\\[\\#004e89\\].dark\\:text-blue-400.border.border-blue-200.dark\\:border-blue-800.hover\\:bg-blue-50.dark\\:hover\\:bg-blue-900\\/40.rounded.transition-colors.flex.items-center.gap-1",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.overflow-x-auto.pb-2 > table.w-full.text-left.border-collapse > tbody > tr.group.hover\\:bg-slate-50\\/50.dark\\:hover\\:bg-slate-800\\/30.transition-colors > td.py-1\\.5.px-2.border-b.border-slate-100.dark\\:border-slate-800\\/50 > input.w-full.h-7.py-1.px-2.text-xs.text-slate-800.dark\\:text-slate-100.bg-transparent.rounded.border.border-transparent.hover\\:border-slate-300.dark\\:hover\\:border-slate-600.focus\\:border-\\[\\#004e89\\].outline-none.transition-colors",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.overflow-x-auto.pb-2 > table.w-full.text-left.border-collapse > tbody > tr.group.hover\\:bg-slate-50\\/50.dark\\:hover\\:bg-slate-800\\/30.transition-colors > td.py-1\\.5.px-2.border-b.border-slate-100.dark\\:border-slate-800\\/50 > input.w-full.h-7.py-1.px-2.text-xs.text-slate-800.dark\\:text-slate-100.bg-transparent.rounded.border.border-transparent.hover\\:border-slate-300.dark\\:hover\\:border-slate-600.focus\\:border-\\[\\#004e89\\].outline-none.transition-colors.font-mono",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.flex.justify-between.items-center.mb-3 > div.flex.gap-2 > button.h-7.px-2.text-xs.font-medium.text-orange-600.dark\\:text-orange-400.border.border-orange-200.dark\\:border-orange-800.hover\\:bg-orange-50.dark\\:hover\\:bg-orange-900\\/40.rounded.transition-colors.flex.items-center.gap-1",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.fixed.bottom-0.left-0.md\\:left-64.right-0.h-12.px-4.bg-white\\/95.dark\\:bg-slate-950\\/95.backdrop-blur.border-t.border-slate-200.dark\\:border-slate-800.flex.items-center.justify-end.gap-2.z-50 > button.h-8.px-4.rounded.text-xs.font-semibold.text-slate-700.dark\\:text-slate-200.bg-white.dark\\:bg-slate-900.border.border-slate-300.dark\\:border-slate-700.hover\\:bg-slate-50.dark\\:hover\\:bg-slate-800.transition-colors.shadow-sm",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.fixed.bottom-0.left-0.md\\:left-64.right-0.h-12.px-4.bg-white\\/95.dark\\:bg-slate-950\\/95.backdrop-blur.border-t.border-slate-200.dark\\:border-slate-800.flex.items-center.justify-end.gap-2.z-50 > button.h-8.px-4.rounded.text-xs.font-semibold.text-white.bg-\\[\\#004e89\\].hover\\:bg-\\[\\#003d6c\\].transition-colors.shadow-sm.inline-flex.items-center",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.flex.justify-end.gap-2.pt-2 > button.px-4.py-2.bg-\\[\\#004e89\\].text-white.rounded.text-xs.font-medium.hover\\:bg-\\[\\#003d6c\\].disabled\\:opacity-50",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > div.flex.items-center.justify-between.mb-1 > button.text-xs.bg-blue-50.text-blue-600.hover\\:bg-blue-100.font-semibold.px-2\\.5.py-1.rounded.cursor-pointer",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.fixed.inset-0.z-50.flex.items-center.justify-center.bg-slate-900\\/50.backdrop-blur-sm.p-4.animate-fade-in > div.bg-white.dark\\:bg-slate-900.border.border-slate-200.dark\\:border-slate-800.rounded-2xl.shadow-2xl.w-full.max-w-md.overflow-hidden > form.p-5.space-y-3\\.5 > div > input.w-full.text-xs.p-2\\.5.border.border-slate-300.dark\\:border-slate-700.rounded-lg.dark\\:bg-slate-800.dark\\:text-slate-100.outline-none.focus\\:ring-2.focus\\:ring-blue-500",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.fixed.inset-0.z-50.flex.items-center.justify-center.bg-slate-900\\/50.backdrop-blur-sm.p-4.animate-fade-in > div.bg-white.dark\\:bg-slate-900.border.border-slate-200.dark\\:border-slate-800.rounded-2xl.shadow-2xl.w-full.max-w-md.overflow-hidden > form.p-5.space-y-3\\.5",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.fixed.inset-0.z-50.flex.items-center.justify-center.bg-slate-900\\/50.backdrop-blur-sm.p-4.animate-fade-in > div.bg-white.dark\\:bg-slate-900.border.border-slate-200.dark\\:border-slate-800.rounded-2xl.shadow-2xl.w-full.max-w-md.overflow-hidden > form.p-5.space-y-3\\.5 > div.pt-2.flex.justify-end.gap-2 > button.px-4.py-1\\.5.text-xs.font-bold.text-white.bg-blue-600.hover\\:bg-blue-700.rounded-lg.cursor-pointer",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.fixed.inset-0.z-50.flex.items-center.justify-center.bg-slate-900\\/50.backdrop-blur-sm.p-4.animate-fade-in > div.bg-white.dark\\:bg-slate-900.border.border-slate-200.dark\\:border-slate-800.rounded-2xl.shadow-2xl.w-full.max-w-md.overflow-hidden > div.bg-gradient-to-r.from-blue-600.to-indigo-600.p-4.text-white.flex.items-center.justify-between > button.p-1.hover\\:bg-white\\/20.rounded.cursor-pointer",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.select-none > div.flex.items-center.gap-1\\.5.bg-gradient-to-r.from-blue-600.to-indigo-600.text-white.px-3.py-2\\.5.rounded-full.shadow-2xl.border.border-white\\/20.hover\\:shadow-blue-500\\/25.transition-all > button.flex.items-center.gap-2.cursor-pointer.text-xs.font-semibold.text-white.pr-1",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.select-none > div.w-80.md\\:w-96.bg-white.dark\\:bg-slate-900.border.border-slate-200.dark\\:border-slate-800.rounded-2xl.shadow-2xl.overflow-hidden.flex.flex-col > div.p-4.space-y-3 > div > textarea.w-full.text-xs.p-2\\.5.border.border-slate-200.dark\\:border-slate-700.rounded-lg.dark\\:bg-slate-800.dark\\:text-slate-100.focus\\:ring-2.focus\\:ring-blue-500.focus\\:outline-none",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.select-none > div.w-80.md\\:w-96.bg-white.dark\\:bg-slate-900.border.border-slate-200.dark\\:border-slate-800.rounded-2xl.shadow-2xl.overflow-hidden.flex.flex-col > div.bg-gradient-to-r.from-blue-600.to-indigo-600.p-3\\.5.text-white.flex.items-center.justify-between > div.flex.items-center.gap-1 > button.p-1.rounded-lg.hover\\:bg-white\\/20.transition.cursor-pointer.text-white\\/80.hover\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.select-none > div.relative.group.flex.items-center.gap-1.bg-gradient-to-r.from-blue-600.to-indigo-600.text-white.p-1.rounded-full.shadow-2xl.border-2.border-white\\/20 > button.w-10.h-10.bg-blue-700.hover\\:bg-blue-800.text-white.rounded-full.flex.items-center.justify-center.cursor-pointer.transition-transform.hover\\:scale-105.active\\:scale-95",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.flex.justify-between.items-center > a.px-4.py-2.border.border-slate-300.rounded.text-sm.font-medium.hover\\:bg-slate-50",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.h-full.flex.flex-col.font-sans.text-slate-800.dark\\:text-slate-100 > div.flex.justify-between.items-start.mb-6 > a.bg-\\[\\#004e89\\].hover\\:bg-\\[\\#003d6c\\].text-white.font-medium.py-2.px-4.rounded-lg.text-sm.flex.items-center.gap-2.transition-colors.shadow-sm",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.space-y-6.max-w-7xl.mx-auto > div.flex.flex-col.sm\\:flex-row.sm\\:items-center.sm\\:justify-between.gap-4 > div.flex.gap-2 > a.px-3\\.5.py-2.bg-\\[\\#004e89\\].text-white.rounded-lg.text-xs.font-semibold.hover\\:bg-\\[\\#003d6c\\].transition-colors.shadow-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > input.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-2 > textarea.w-full.border.border-slate-300.rounded.p-2.text-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.flex.items-center.justify-between.text-xs.gap-2 > div.flex.gap-1.w-48 > input.h-8.border.border-slate-300.rounded.text-xs.px-2.w-full",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.flex.items-center.justify-between.text-xs.gap-2 > input.h-8.border.border-slate-300.rounded.text-xs.px-2.w-32",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.border.border-slate-200.rounded-lg.p-4.space-y-3 > div.flex.gap-2.pt-2 > button.px-3.py-1\\.5.border.border-blue-500.text-blue-600.rounded.text-xs.font-medium.hover\\:bg-blue-50.flex.items-center.gap-1",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.border.border-slate-200.rounded-lg.p-4.space-y-3 > table.w-full.text-left.text-xs > tbody > tr.border-b.border-slate-100.hover\\:bg-slate-50 > td.py-2.px-2 > div.relative.w-full > div.relative.flex.items-center > input.w-full.text-xs.px-3.py-2.border.border-slate-300.dark\\:border-slate-700.rounded-lg.dark\\:bg-slate-800.dark\\:text-slate-100.focus\\:ring-2.focus\\:ring-blue-500.focus\\:outline-none.transition",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.border.border-slate-200.rounded-lg.p-4.space-y-3 > table.w-full.text-left.text-xs > tbody > tr.border-b.border-slate-100.hover\\:bg-slate-50 > td.py-2.px-2 > input.w-full.h-8.border.border-slate-300.rounded.px-2.text-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"unit\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.border.border-slate-200.rounded-lg.p-4.space-y-3 > div.flex.gap-2.pt-2 > button.px-3.py-1\\.5.border.border-purple-500.text-purple-600.rounded.text-xs.font-medium.hover\\:bg-purple-50.flex.items-center.gap-1",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.flex.justify-end.gap-2.pt-2 > button.px-4.py-2.border.rounded.text-xs.font-medium.hover\\:bg-slate-50.disabled\\:opacity-50",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.h-full.flex.flex-col.font-sans.text-slate-800.dark\\:text-slate-100 > div.flex.flex-col.lg\\:flex-row.lg\\:items-center.justify-between.gap-4.mb-4 > div.flex.flex-wrap.items-center.gap-3 > div.flex.items-center.gap-2 > input.py-2.px-3.text-xs.rounded-lg.border.border-slate-200.dark\\:border-slate-700.bg-transparent.outline-none.focus\\:border-\\[\\#004e89\\]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.h-full.flex.flex-col.font-sans.text-slate-800.dark\\:text-slate-100 > div.flex.flex-col.lg\\:flex-row.lg\\:items-center.justify-between.gap-4.mb-4 > div.flex.flex-wrap.items-center.gap-3 > div.relative > input.w-56.py-2.px-3.pl-9.text-xs.rounded-lg.border.border-slate-200.dark\\:border-slate-700.focus\\:border-\\[\\#004e89\\].outline-none.bg-transparent",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.grid.grid-rows-\\[auto_1fr_auto\\].bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden > nav.overflow-y-auto.p-3.space-y-1.hide-scrollbar > div.space-y-0\\.5 > button.w-full.flex.items-center.justify-between.px-3.py-2.rounded-lg.text-xs.font-bold.text-slate-800.hover\\:bg-slate-50.transition.cursor-pointer",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > button.relative.p-2.text-slate-600.dark\\:text-slate-300.hover\\:bg-slate-100.dark\\:hover\\:bg-slate-700.rounded-full.transition-colors.focus\\:outline-none",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.absolute.right-0.mt-2.w-80.sm\\:w-96.bg-white.dark\\:bg-slate-800.border.border-slate-200.dark\\:border-slate-700.rounded-2xl.shadow-2xl.z-50.overflow-hidden.text-slate-800.dark\\:text-slate-100 > div.p-3\\.5.border-b.border-slate-100.dark\\:border-slate-700\\/60.flex.items-center.justify-between.bg-slate-50\\/50.dark\\:bg-slate-800\\/50 > div.flex.items-center.gap-2.text-xs > button.text-blue-600.hover\\:text-blue-700.dark\\:text-blue-400.font-semibold.hover\\:underline",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.absolute.right-0.mt-2.w-80.sm\\:w-96.bg-white.dark\\:bg-slate-800.border.border-slate-200.dark\\:border-slate-700.rounded-2xl.shadow-2xl.z-50.overflow-hidden.text-slate-800.dark\\:text-slate-100 > div.p-3\\.5.border-b.border-slate-100.dark\\:border-slate-700\\/60.flex.items-center.justify-between.bg-slate-50\\/50.dark\\:bg-slate-800\\/50 > div.flex.items-center.gap-2.text-xs > button.text-slate-400.hover\\:text-rose-600.font-medium",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.absolute.right-0.mt-2.w-80.sm\\:w-96.bg-white.dark\\:bg-slate-800.border.border-slate-200.dark\\:border-slate-700.rounded-2xl.shadow-2xl.z-50.overflow-hidden.text-slate-800.dark\\:text-slate-100 > div.flex.items-center.gap-1.p-2.border-b.border-slate-100.dark\\:border-slate-700\\/60.overflow-x-auto.text-\\[11px\\].hide-scrollbar > button.px-2\\.5.py-1.rounded-md.font-semibold.transition-colors.whitespace-nowrap.bg-slate-900.text-white.dark\\:bg-slate-100.dark\\:text-slate-900",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.absolute.right-0.mt-2.w-80.sm\\:w-96.bg-white.dark\\:bg-slate-800.border.border-slate-200.dark\\:border-slate-700.rounded-2xl.shadow-2xl.z-50.overflow-hidden.text-slate-800.dark\\:text-slate-100 > div.flex.items-center.gap-1.p-2.border-b.border-slate-100.dark\\:border-slate-700\\/60.overflow-x-auto.text-\\[11px\\].hide-scrollbar > button.px-2\\.5.py-1.rounded-md.font-semibold.transition-colors.whitespace-nowrap.text-slate-600.dark\\:text-slate-400.hover\\:bg-slate-100.dark\\:hover\\:bg-slate-700",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > button.flex.items-center.gap-2\\.5.p-1\\.5.rounded-full.hover\\:bg-slate-100.dark\\:hover\\:bg-slate-700.transition.focus\\:outline-none.cursor-pointer.select-none",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4.relative.z-50 > div.relative > div.w-64.bg-white.dark\\:bg-slate-800.rounded-2xl.shadow-xl.border.border-slate-100.dark\\:border-slate-700.p-2.space-y-2.z-50.absolute.right-0.top-11.font-sans.text-xs > div.space-y-0\\.5.pt-1 > button.w-full.flex.items-center.gap-2\\.5.p-2.rounded-xl.text-slate-700.dark\\:text-slate-200.hover\\:bg-slate-50.dark\\:hover\\:bg-slate-700.font-semibold.transition.text-left.cursor-pointer",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"workshopName\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"tagline\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "textarea[name=\"address\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"phone\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"email\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"binNumber\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "input[name=\"currencySymbol\"]",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex.h-screen.w-full.bg-slate-50.dark\\:bg-slate-900.font-sans.overflow-hidden > main.flex-1.overflow-y-auto.p-8.bg-white.dark\\:bg-slate-900 > div.p-6.space-y-6.max-w-4xl.mx-auto.text-slate-800 > form.bg-white.p-6.rounded-xl.border.border-slate-200.shadow-xs.space-y-6",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex.h-screen.w-full.bg-slate-50.dark\\:bg-slate-900.font-sans.overflow-hidden > main.flex-1.overflow-y-auto.p-8.bg-white.dark\\:bg-slate-900 > div.p-6.space-y-6.max-w-4xl.mx-auto.text-slate-800 > form.bg-white.p-6.rounded-xl.border.border-slate-200.shadow-xs.space-y-6 > div.pt-4.border-t.border-slate-100.flex.justify-end > button.px-5.py-2.bg-\\[\\#004e89\\].text-white.rounded-lg.text-xs.font-bold.hover\\:bg-\\[\\#003d6c\\].transition-colors.shadow-sm",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex.h-screen.w-full.bg-slate-50.dark\\:bg-slate-900.font-sans.overflow-hidden > aside.w-64.bg-white.dark\\:bg-slate-800.border-r.border-slate-200.dark\\:border-slate-700.flex.flex-col.p-4.space-y-5.select-none.shrink-0 > div.flex-1.overflow-y-auto.space-y-4.pr-1.hide-scrollbar > div.space-y-1 > div.space-y-0\\.5 > div.pt-1 > button.w-full.flex.items-center.justify-between.px-3.py-1\\.5.text-xs.font-bold.text-slate-700.dark\\:text-slate-300.hover\\:bg-slate-50.dark\\:hover\\:bg-slate-700\\/40.rounded-lg.transition",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex.h-screen.w-full.bg-slate-50.dark\\:bg-slate-900.font-sans.overflow-hidden > main.flex-1.overflow-y-auto.p-8.bg-white.dark\\:bg-slate-900 > div.p-6.space-y-6.max-w-4xl.mx-auto.text-slate-800 > div.flex.justify-between.items-center > a.px-3\\.5.py-1\\.5.bg-white.border.border-slate-300.rounded-lg.text-xs.font-semibold.hover\\:bg-slate-50.text-slate-700.transition-colors.shadow-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.space-y-6.max-w-7xl.mx-auto > div.flex.flex-col.sm\\:flex-row.sm\\:items-center.sm\\:justify-between.gap-4 > div.flex.gap-2 > a.px-3\\.5.py-2.bg-white.text-slate-700.border.border-slate-300.rounded-lg.text-xs.font-semibold.hover\\:bg-slate-50.transition-colors.shadow-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.xl\\:grid-cols-4.gap-x-4.gap-y-3 > div > input.w-full.h-8.py-1.px-2\\.5.text-xs.text-slate-800.dark\\:text-slate-100.bg-transparent.rounded.border.border-slate-300.dark\\:border-slate-700.focus\\:ring-1.focus\\:ring-\\[\\#004e89\\].outline-none.transition-colors",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.xl\\:grid-cols-4.gap-x-4.gap-y-3 > div.xl\\:col-span-2 > textarea.w-full.h-auto.py-1\\.5.px-2\\.5.text-xs.text-slate-800.dark\\:text-slate-100.bg-transparent.rounded.border.border-slate-300.dark\\:border-slate-700.focus\\:ring-1.focus\\:ring-\\[\\#004e89\\].outline-none.transition-colors.resize-none",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.flex.flex-col.xl\\:flex-row.gap-4 > div.xl\\:w-1\\/3 > textarea.w-full.py-1\\.5.px-2\\.5.text-xs.text-slate-800.dark\\:text-slate-100.bg-transparent.rounded.border.border-slate-300.dark\\:border-slate-700.focus\\:ring-1.focus\\:ring-\\[\\#004e89\\].outline-none.transition-colors.resize-none",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.flex.justify-between.items-center.mb-3 > div.flex.gap-2 > button.h-7.px-2.text-xs.font-medium.text-\\[\\#004e89\\].dark\\:text-blue-400.border.border-blue-200.dark\\:border-blue-800.hover\\:bg-blue-50.dark\\:hover\\:bg-blue-900\\/40.rounded.transition-colors.flex.items-center.gap-1",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.overflow-x-auto.pb-2 > table.w-full.text-left.border-collapse > tbody > tr.group.hover\\:bg-slate-50\\/50.dark\\:hover\\:bg-slate-800\\/30.transition-colors > td.py-1\\.5.px-2.border-b.border-slate-100.dark\\:border-slate-800\\/50 > input.w-full.h-7.py-1.px-2.text-xs.text-slate-800.dark\\:text-slate-100.bg-transparent.rounded.border.border-transparent.hover\\:border-slate-300.dark\\:hover\\:border-slate-600.focus\\:border-\\[\\#004e89\\].outline-none.transition-colors",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.overflow-x-auto.pb-2 > table.w-full.text-left.border-collapse > tbody > tr.group.hover\\:bg-slate-50\\/50.dark\\:hover\\:bg-slate-800\\/30.transition-colors > td.py-1\\.5.px-2.border-b.border-slate-100.dark\\:border-slate-800\\/50 > input.w-full.h-7.py-1.px-2.text-xs.text-slate-800.dark\\:text-slate-100.bg-transparent.rounded.border.border-transparent.hover\\:border-slate-300.dark\\:hover\\:border-slate-600.focus\\:border-\\[\\#004e89\\].outline-none.transition-colors.font-mono",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.flex-1.overflow-y-auto.space-y-3.pb-16 > div.p-3\\.5.bg-white.dark\\:bg-slate-950.rounded-lg.border.border-slate-200.dark\\:border-slate-800 > div.flex.justify-between.items-center.mb-3 > div.flex.gap-2 > button.h-7.px-2.text-xs.font-medium.text-orange-600.dark\\:text-orange-400.border.border-orange-200.dark\\:border-orange-800.hover\\:bg-orange-50.dark\\:hover\\:bg-orange-900\\/40.rounded.transition-colors.flex.items-center.gap-1",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.fixed.bottom-0.left-0.md\\:left-64.right-0.h-12.px-4.bg-white\\/95.dark\\:bg-slate-950\\/95.backdrop-blur.border-t.border-slate-200.dark\\:border-slate-800.flex.items-center.justify-end.gap-2.z-50 > button.h-8.px-4.rounded.text-xs.font-semibold.text-slate-700.dark\\:text-slate-200.bg-white.dark\\:bg-slate-900.border.border-slate-300.dark\\:border-slate-700.hover\\:bg-slate-50.dark\\:hover\\:bg-slate-800.transition-colors.shadow-sm",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-4.h-full.flex.flex-col > div.fixed.bottom-0.left-0.md\\:left-64.right-0.h-12.px-4.bg-white\\/95.dark\\:bg-slate-950\\/95.backdrop-blur.border-t.border-slate-200.dark\\:border-slate-800.flex.items-center.justify-end.gap-2.z-50 > button.h-8.px-4.rounded.text-xs.font-semibold.text-white.bg-\\[\\#004e89\\].hover\\:bg-\\[\\#003d6c\\].transition-colors.shadow-sm.inline-flex.items-center",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.flex.justify-end.gap-2.pt-2 > button.px-4.py-2.bg-\\[\\#004e89\\].text-white.rounded.text-xs.font-medium.hover\\:bg-\\[\\#003d6c\\].disabled\\:opacity-50",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > div.flex.items-center.justify-between.mb-1 > button.text-xs.bg-blue-50.text-blue-600.hover\\:bg-blue-100.font-semibold.px-2\\.5.py-1.rounded.cursor-pointer",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.fixed.inset-0.z-50.flex.items-center.justify-center.bg-slate-900\\/50.backdrop-blur-sm.p-4.animate-fade-in > div.bg-white.dark\\:bg-slate-900.border.border-slate-200.dark\\:border-slate-800.rounded-2xl.shadow-2xl.w-full.max-w-md.overflow-hidden > form.p-5.space-y-3\\.5 > div > input.w-full.text-xs.p-2\\.5.border.border-slate-300.dark\\:border-slate-700.rounded-lg.dark\\:bg-slate-800.dark\\:text-slate-100.outline-none.focus\\:ring-2.focus\\:ring-blue-500",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.fixed.inset-0.z-50.flex.items-center.justify-center.bg-slate-900\\/50.backdrop-blur-sm.p-4.animate-fade-in > div.bg-white.dark\\:bg-slate-900.border.border-slate-200.dark\\:border-slate-800.rounded-2xl.shadow-2xl.w-full.max-w-md.overflow-hidden > form.p-5.space-y-3\\.5",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.fixed.inset-0.z-50.flex.items-center.justify-center.bg-slate-900\\/50.backdrop-blur-sm.p-4.animate-fade-in > div.bg-white.dark\\:bg-slate-900.border.border-slate-200.dark\\:border-slate-800.rounded-2xl.shadow-2xl.w-full.max-w-md.overflow-hidden > form.p-5.space-y-3\\.5 > div.pt-2.flex.justify-end.gap-2 > button.px-4.py-1\\.5.text-xs.font-bold.text-white.bg-blue-600.hover\\:bg-blue-700.rounded-lg.cursor-pointer",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.fixed.inset-0.z-50.flex.items-center.justify-center.bg-slate-900\\/50.backdrop-blur-sm.p-4.animate-fade-in > div.bg-white.dark\\:bg-slate-900.border.border-slate-200.dark\\:border-slate-800.rounded-2xl.shadow-2xl.w-full.max-w-md.overflow-hidden > div.bg-gradient-to-r.from-blue-600.to-indigo-600.p-4.text-white.flex.items-center.justify-between > button.p-1.hover\\:bg-white\\/20.rounded.cursor-pointer",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.select-none > div.flex.items-center.gap-1\\.5.bg-gradient-to-r.from-blue-600.to-indigo-600.text-white.px-3.py-2\\.5.rounded-full.shadow-2xl.border.border-white\\/20.hover\\:shadow-blue-500\\/25.transition-all > button.flex.items-center.gap-2.cursor-pointer.text-xs.font-semibold.text-white.pr-1",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.select-none > div.w-80.md\\:w-96.bg-white.dark\\:bg-slate-900.border.border-slate-200.dark\\:border-slate-800.rounded-2xl.shadow-2xl.overflow-hidden.flex.flex-col > div.p-4.space-y-3 > div > textarea.w-full.text-xs.p-2\\.5.border.border-slate-200.dark\\:border-slate-700.rounded-lg.dark\\:bg-slate-800.dark\\:text-slate-100.focus\\:ring-2.focus\\:ring-blue-500.focus\\:outline-none",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.select-none > div.w-80.md\\:w-96.bg-white.dark\\:bg-slate-900.border.border-slate-200.dark\\:border-slate-800.rounded-2xl.shadow-2xl.overflow-hidden.flex.flex-col > div.bg-gradient-to-r.from-blue-600.to-indigo-600.p-3\\.5.text-white.flex.items-center.justify-between > div.flex.items-center.gap-1 > button.p-1.rounded-lg.hover\\:bg-white\\/20.transition.cursor-pointer.text-white\\/80.hover\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.select-none > div.relative.group.flex.items-center.gap-1.bg-gradient-to-r.from-blue-600.to-indigo-600.text-white.p-1.rounded-full.shadow-2xl.border-2.border-white\\/20 > button.w-10.h-10.bg-blue-700.hover\\:bg-blue-800.text-white.rounded-full.flex.items-center.justify-center.cursor-pointer.transition-transform.hover\\:scale-105.active\\:scale-95",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.flex.justify-between.items-center > a.px-4.py-2.border.border-slate-300.rounded.text-sm.font-medium.hover\\:bg-slate-50",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.h-full.flex.flex-col.font-sans.text-slate-800.dark\\:text-slate-100 > div.flex.justify-between.items-start.mb-6 > a.bg-\\[\\#004e89\\].hover\\:bg-\\[\\#003d6c\\].text-white.font-medium.py-2.px-4.rounded-lg.text-sm.flex.items-center.gap-2.transition-colors.shadow-sm",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.space-y-6.max-w-7xl.mx-auto > div.flex.flex-col.sm\\:flex-row.sm\\:items-center.sm\\:justify-between.gap-4 > div.flex.gap-2 > a.px-3\\.5.py-2.bg-\\[\\#004e89\\].text-white.rounded-lg.text-xs.font-semibold.hover\\:bg-\\[\\#003d6c\\].transition-colors.shadow-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.space-y-6.max-w-7xl.mx-auto > div.flex.flex-col.sm\\:flex-row.sm\\:items-center.sm\\:justify-between.gap-4 > div.flex.gap-2 > a.px-3\\.5.py-2.bg-\\[\\#004e89\\].text-white.rounded-lg.text-xs.font-semibold.hover\\:bg-\\[\\#003d6c\\].transition-colors.shadow-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.grid.grid-cols-1.md\\:grid-cols-4.gap-4 > div > input.w-full.h-9.border.border-slate-300.rounded.px-2.text-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-2 > textarea.w-full.border.border-slate-300.rounded.p-2.text-xs",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.flex.items-center.justify-between.text-xs.gap-2 > div.flex.gap-1.w-48 > input.h-8.border.border-slate-300.rounded.text-xs.px-2.w-full",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.grid.grid-cols-1.md\\:grid-cols-2.gap-6 > div.bg-white.p-4.border.border-slate-200.rounded-lg.space-y-3 > div.flex.items-center.justify-between.text-xs.gap-2 > input.h-8.border.border-slate-300.rounded.text-xs.px-2.w-32",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "click",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > main.flex-1.overflow-x-hidden.overflow-y-auto.bg-gray-50.dark\\:bg-gray-900.p-6 > div.p-6.max-w-7xl.mx-auto.space-y-6.text-slate-800 > div.bg-white.border.border-slate-200.rounded-lg.p-4.space-y-3 > div.flex.gap-2.pt-2 > button.px-3.py-1\\.5.border.border-blue-500.text-blue-600.rounded.text-xs.font-medium.hover\\:bg-blue-50.flex.items-center.gap-1",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
+      "outcome": "success",
+      "root_cause": "Normal execution",
+      "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "type",
+      "selector": "html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > div.flex-1.flex.flex-col.overflow-hidden > header.bg-white.dark\\:bg-gray-800.shadow-sm.flex.flex-col.px-6.py-3.relative.z-30 > div.flex.items-center.justify-between > div.flex.items-center.space-x-4 > div.relative > div.flex.items-center.border.border-gray-300.dark\\:border-gray-600.rounded-md.px-3.py-1\\.5.bg-gray-50.dark\\:bg-gray-700.focus-within\\:ring-1.focus-within\\:ring-\\[\\#004e89\\] > input.bg-transparent.border-none.outline-none.text-sm.w-64.dark\\:text-white",
       "outcome": "success",
       "root_cause": "Normal execution",
       "fix_rule": "Proceed with standard element interaction"

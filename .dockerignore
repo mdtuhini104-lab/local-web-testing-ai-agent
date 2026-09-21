@@ -1,0 +1,15 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv
+env
+.idea
+.vscode
+storage/runs/*
+storage/reports/*
+storage/*.db
