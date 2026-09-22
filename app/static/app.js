@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div style="display: flex; gap: 8px; align-items: center;">
           <input type="text" class="form-input app-username" placeholder="Username / ID" style="flex: 1; font-size: 11px;">
           <input type="password" class="form-input app-password" placeholder="Password" style="flex: 1; font-size: 11px;">
-          <button type="button" class="btn-secondary btn-remove-app-row" style="padding: 6px 10px; font-size: 12px; color: #ef4444; border-color: rgba(239,68,68,0.3);" title="Remove App Target">❌</button>
+          <button type="button" class="btn-secondary btn-remove-app-row" style="padding: 6px 10px; font-size: 12px; color: #ef4444; border-color: rgba(239,68,68,0.3);" title="Remove App Target" aria-label="Remove App Target">❌</button>
         </div>
       `;
       appRowsContainer.appendChild(row);
@@ -124,7 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
       passwordInput.type = isPassword ? 'text' : 'password';
       eyeIcon.style.display = isPassword ? 'none' : 'block';
       eyeOffIcon.style.display = isPassword ? 'block' : 'none';
-      togglePasswordBtn.setAttribute('title', isPassword ? 'Hide password' : 'Show password');
+      const labelText = isPassword ? 'Hide password' : 'Show password';
+      togglePasswordBtn.setAttribute('title', labelText);
+      togglePasswordBtn.setAttribute('aria-label', labelText);
     });
   }
 
