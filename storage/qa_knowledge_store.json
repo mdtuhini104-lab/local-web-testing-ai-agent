@@ -251,6 +251,12 @@
       "target_url": "http://localhost:3000/login",
       "bug": "Layout Overlap detected between 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.flex.flex-col.bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden.relative > nav.flex-1.min-h-0.overflow-y-auto.p-3.pb-32.space-y-1.hide-scrollbar.relative.z-10 > div.space-y-1 > div.space-y-0\\.5 > div.overflow-hidden.pl-9.pr-1.py-1.space-y-1.border-l.ml-5.mb-2 > a.block.px-2\\.5.py-1\\.5.rounded-md.text-xs.transition.text-slate-600.font-medium.hover\\:bg-slate-50.hover\\:text-slate-900' and 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.flex.flex-col.bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden.relative > div.p-3.border-t.border-slate-200.bg-white.shrink-0.shadow-\\[0_-4px_12px_rgba\\(0\\,0\\,0\\,0\\.05\\)\\].relative.z-30.mt-auto.space-y-1 > a.flex.items-center.gap-3.px-3.py-2.rounded-lg.text-xs.font-bold.transition.text-slate-700.hover\\:bg-slate-50.hover\\:text-slate-900'",
       "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260922_002343",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Runner Exception: AgentRunner._record_step() got an unexpected keyword argument 'action_error_msg'",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
     }
   ],
   "step_experiences": [
