@@ -135,6 +135,300 @@
         "http://localhost:3000/login"
       ],
       "lesson": "On target 'http://localhost:3000/login', issue encountered: Console ERROR: Failed to load resource: the server responded with a status of 404 (Not Found) at htt. Ensure rigorous validation check on input fields."
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/dashboard",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/dashboard': Verify element selector availability for 'chrome-error://chromewebdata/dashboard'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/items",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/items': Verify element selector availability for 'chrome-error://chromewebdata/items'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/items/new",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/items/new': Verify element selector availability for 'chrome-error://chromewebdata/items/new'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/categories",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/categories': Verify element selector availability for 'chrome-error://chromewebdata/categories'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/units",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/units': Verify element selector availability for 'chrome-error://chromewebdata/units'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/workshops",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/workshops': Verify element selector availability for 'chrome-error://chromewebdata/workshops'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/departments",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/departments': Verify element selector availability for 'chrome-error://chromewebdata/departments'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/services",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/services': Verify element selector availability for 'chrome-error://chromewebdata/services'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/vehicles",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/vehicles': Verify element selector availability for 'chrome-error://chromewebdata/vehicles'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/inspections",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/inspections': Verify element selector availability for 'chrome-error://chromewebdata/inspections'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/inspections/new",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/inspections/new': Verify element selector availability for 'chrome-error://chromewebdata/inspections/new'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/quotations",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/quotations': Verify element selector availability for 'chrome-error://chromewebdata/quotations'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/quotations/create",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/quotations/create': Verify element selector availability for 'chrome-error://chromewebdata/quotations/create'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/work-orders",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/work-orders': Verify element selector availability for 'chrome-error://chromewebdata/work-orders'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/job-cards",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/job-cards': Verify element selector availability for 'chrome-error://chromewebdata/job-cards'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/billing-invoice",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/billing-invoice': Verify element selector availability for 'chrome-error://chromewebdata/billing-invoice'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/customer-statements",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/customer-statements': Verify element selector availability for 'chrome-error://chromewebdata/customer-statements'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/purchases",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/purchases': Verify element selector availability for 'chrome-error://chromewebdata/purchases'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/users-staff",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/users-staff': Verify element selector availability for 'chrome-error://chromewebdata/users-staff'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/profile",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/profile': Verify element selector availability for 'chrome-error://chromewebdata/profile'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/settings",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/settings': Verify element selector availability for 'chrome-error://chromewebdata/settings'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/dashboard",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/dashboard': Verify element selector availability for 'chrome-error://chromewebdata/dashboard'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/items",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/items': Verify element selector availability for 'chrome-error://chromewebdata/items'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/items/new",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/items/new': Verify element selector availability for 'chrome-error://chromewebdata/items/new'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/categories",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/categories': Verify element selector availability for 'chrome-error://chromewebdata/categories'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/units",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/units': Verify element selector availability for 'chrome-error://chromewebdata/units'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/workshops",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/workshops': Verify element selector availability for 'chrome-error://chromewebdata/workshops'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/departments",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/departments': Verify element selector availability for 'chrome-error://chromewebdata/departments'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/services",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/services': Verify element selector availability for 'chrome-error://chromewebdata/services'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/vehicles",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/vehicles': Verify element selector availability for 'chrome-error://chromewebdata/vehicles'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/inspections",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/inspections': Verify element selector availability for 'chrome-error://chromewebdata/inspections'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/inspections/new",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/inspections/new': Verify element selector availability for 'chrome-error://chromewebdata/inspections/new'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/quotations",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/quotations': Verify element selector availability for 'chrome-error://chromewebdata/quotations'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/quotations/create",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/quotations/create': Verify element selector availability for 'chrome-error://chromewebdata/quotations/create'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/work-orders",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/work-orders': Verify element selector availability for 'chrome-error://chromewebdata/work-orders'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/job-cards",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/job-cards': Verify element selector availability for 'chrome-error://chromewebdata/job-cards'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/billing-invoice",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/billing-invoice': Verify element selector availability for 'chrome-error://chromewebdata/billing-invoice'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/customer-statements",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/customer-statements': Verify element selector availability for 'chrome-error://chromewebdata/customer-statements'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/purchases",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/purchases': Verify element selector availability for 'chrome-error://chromewebdata/purchases'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/users-staff",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/users-staff': Verify element selector availability for 'chrome-error://chromewebdata/users-staff'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/profile",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/profile': Verify element selector availability for 'chrome-error://chromewebdata/profile'"
+    },
+    {
+      "context_keywords": [
+        "chrome-error://chromewebdata/settings",
+        "http://localhost:3000/login"
+      ],
+      "lesson": "Corrective RAG Rule for 'chrome-error://chromewebdata/settings': Verify element selector availability for 'chrome-error://chromewebdata/settings'"
     }
   ],
   "discovered_vulnerabilities": [
@@ -250,6 +544,12 @@
       "run_id": "run_20260904_000557",
       "target_url": "http://localhost:3000/login",
       "bug": "Layout Overlap detected between 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.flex.flex-col.bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden.relative > nav.flex-1.min-h-0.overflow-y-auto.p-3.pb-32.space-y-1.hide-scrollbar.relative.z-10 > div.space-y-1 > div.space-y-0\\.5 > div.overflow-hidden.pl-9.pr-1.py-1.space-y-1.border-l.ml-5.mb-2 > a.block.px-2\\.5.py-1\\.5.rounded-md.text-xs.transition.text-slate-600.font-medium.hover\\:bg-slate-50.hover\\:text-slate-900' and 'html.__variable_f367f3 > body.__className_f367f3.antialiased.flex.h-screen.bg-gray-50.text-gray-900.dark\\:bg-gray-900.dark\\:text-gray-100 > aside.w-64.h-screen.flex.flex-col.bg-white.border-r.border-slate-200.shrink-0.select-none.shadow-sm.z-30.overflow-hidden.relative > div.p-3.border-t.border-slate-200.bg-white.shrink-0.shadow-\\[0_-4px_12px_rgba\\(0\\,0\\,0\\,0\\.05\\)\\].relative.z-30.mt-auto.space-y-1 > a.flex.items-center.gap-3.px-3.py-2.rounded-lg.text-xs.font-bold.transition.text-slate-700.hover\\:bg-slate-50.hover\\:text-slate-900'",
+      "strategy": "Autonomous ReAct + QA Mentor Consultation"
+    },
+    {
+      "run_id": "run_20260923_001217",
+      "target_url": "http://localhost:3000/login",
+      "bug": "Runner Exception: AgentRunner._record_step() got an unexpected keyword argument 'action_error_msg'",
       "strategy": "Autonomous ReAct + QA Mentor Consultation"
     }
   ],
@@ -1997,6 +2297,342 @@
       "outcome": "success",
       "root_cause": "Normal execution",
       "fix_rule": "Proceed with standard element interaction"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/dashboard",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/dashboard'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/items",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/items'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/items/new",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/items/new'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/categories",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/categories'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/units",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/units'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/workshops",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/workshops'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/departments",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/departments'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/services",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/services'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/vehicles",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/vehicles'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/inspections",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/inspections'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/inspections/new",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/inspections/new'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/quotations",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/quotations'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/quotations/create",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/quotations/create'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/work-orders",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/work-orders'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/job-cards",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/job-cards'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/billing-invoice",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/billing-invoice'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/customer-statements",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/customer-statements'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/purchases",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/purchases'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/users-staff",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/users-staff'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/profile",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/profile'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/settings",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/settings'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/dashboard",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/dashboard'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/items",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/items'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/items/new",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/items/new'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/categories",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/categories'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/units",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/units'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/workshops",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/workshops'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/departments",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/departments'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/services",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/services'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/vehicles",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/vehicles'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/inspections",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/inspections'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/inspections/new",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/inspections/new'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/quotations",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/quotations'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/quotations/create",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/quotations/create'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/work-orders",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/work-orders'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/job-cards",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/job-cards'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/billing-invoice",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/billing-invoice'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/customer-statements",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/customer-statements'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/purchases",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/purchases'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/users-staff",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/users-staff'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/profile",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/profile'"
+    },
+    {
+      "target_url": "http://localhost:3000/login",
+      "action": "navigate",
+      "selector": "chrome-error://chromewebdata/settings",
+      "outcome": "failed",
+      "root_cause": "Action execution error: Target URL is unreachable / Server down (Page.goto: net::ERR_NAME_NOT_RESOLVED a",
+      "fix_rule": "Verify element selector availability for 'chrome-error://chromewebdata/settings'"
     }
   ]
 }
