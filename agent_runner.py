@@ -1098,8 +1098,10 @@ class AgentRunner:
         screenshot_filename: str,
         captured_errors: Dict[str, Any],
         action_success: bool,
+        action_error_msg: Optional[str] = None,
         error_message: Optional[str] = None,
     ) -> None:
+        error_msg = action_error_msg or error_message
         """Records single step data into aggregated lists and step_records."""
         cat_dict = {}
         if hasattr(ai_response, "categorized_issues") and ai_response.categorized_issues:
@@ -1133,7 +1135,7 @@ class AgentRunner:
             supervisor_warning=sup_warn,
             business_ux_evaluation=biz_eval,
             metacognitive_strategy=meta_strat,
-            error_message=error_message,
+            error_message=error_msg,
         )
         self.step_records.append(record)
 
@@ -1175,13 +1177,13 @@ class AgentRunner:
 
         # Record RAG Step Experience & Self-Correction (Safe Execution Safeguard)
         try:
-            if not action_success and error_message:
+            if not action_success and error_msg:
                 fail_analysis = self.ai_brain.self_learning_engine.analyze_step_failure(
                     target_url=self.target_url,
                     action=ai_response.action,
                     selector=ai_response.target_selector,
-                    error_message=error_message,
-                    error_msg=error_message,
+                    error_message=error_msg,
+                    error_msg=error_msg,
                 )
                 logger.info(f"🧠 Self-Learning RAG Root Cause Analysis: {fail_analysis.get('root_cause')}")
             else:
