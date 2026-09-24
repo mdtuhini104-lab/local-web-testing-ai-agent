@@ -2,39 +2,50 @@ import requests
 from requests.exceptions import ConnectionError, Timeout
 import time
 import json
+from fastapi.testclient import TestClient
+from app.main import app
 
-def test():
+def test_path_traversal_protection():
+    """Verify that path traversal payloads in run_id or batch_id return HTTP 400 Bad Request."""
+    bad_identifiers = [
+        "invalid..id",
+        "invalid_id.json",
+        "run_123;SELECT",
+        "run_123<script>",
+        "run_123%00",
+    ]
+    with TestClient(app) as client:
+        for bad_id in bad_identifiers:
+            res = client.get(f"/api/runs/{bad_id}")
+            assert res.status_code == 400, f"Expected 400 for run_id '{bad_id}', got {res.status_code}"
+            assert res.json()["detail"] == "Invalid identifier format"
+
+            res_json = client.get(f"/api/runs/{bad_id}/download/json")
+            assert res_json.status_code == 400
+
+            res_batch = client.get(f"/api/batch/{bad_id}")
+            assert res_batch.status_code == 400
+
+
+def test_valid_identifier_sanitization():
+    """Verify that valid identifiers pass sanitization (returns 404 when not found, rather than 400)."""
+    valid_id = "run_20260101_120000"
+    with TestClient(app) as client:
+        res = client.get(f"/api/runs/{valid_id}")
+        assert res.status_code == 404
+
+
+def test_live_api_if_running():
     try:
-        # Trigger a run
-        resp = requests.post("http://127.0.0.1:8000/api/runs", json={
-            "target_url": "https://mamun.aamardokan.online/",
-            "username": "admin@example.com",
-            "password": "@Admin123",
-            "max_steps": 2,
-            "headless": True
-        }, timeout=15)
-        print("Status:", resp.status_code)
-        print("Response:", resp.json())
-        run_id = resp.json().get("run_id")
-        
-        # Poll for status
-        for _ in range(10):
-            time.sleep(2)
-            try:
-                resp = requests.get(f"http://127.0.0.1:8000/api/runs/{run_id}", timeout=15)
-                if resp.status_code == 200:
-                    data = resp.json()
-                    print(f"Status: {data.get('status')}")
-                    if "failed" in data.get("status", "") or "completed" in data.get("status", ""):
-                        print("Run finished. Summary:", json.dumps(data.get("summary", {}), indent=2))
-                        break
-            except (ConnectionError, Timeout) as poll_err:
-                print(f"[!] Polling connection warning: {poll_err}")
-    except (ConnectionError, Timeout) as e:
-        print(f"[!] Error: Backend server is not reachable or request timed out ({e}). Ensure `python server.py` is actively running on port 8000.")
-    except Exception as exc:
-        print(f"[!] Unexpected error during API test: {exc}")
+        resp = requests.get("http://127.0.0.1:8000/api/models", timeout=2)
+        if resp.status_code == 200:
+            print("Live server running on 8000")
+    except Exception:
+        pass
+
 
 if __name__ == "__main__":
-    test()
+    test_path_traversal_protection()
+    test_valid_identifier_sanitization()
+    print("✅ Security tests passed!")
 

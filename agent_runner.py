@@ -398,7 +398,7 @@ class AgentRunner:
                     screenshot_filename,
                     captured_errors,
                     action_success=nav_ok,
-                    action_error_msg=nav_err if not nav_ok else None
+                    error_message=nav_err if not nav_ok else None
                 )
 
                 if self.step_callback:
