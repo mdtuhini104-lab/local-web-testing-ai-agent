@@ -52,6 +52,16 @@ async def init_db() -> None:
             );
             """
         )
+        # Bolt Performance Optimization:
+        # Create database indexes on foreign key `run_id` and creation timestamp `created_at`.
+        # Prevents full table scans on `test_steps` during `get_test_run_details` and `prune_old_test_runs`.
+        # Accelerates `get_test_runs` ordering by `created_at DESC`.
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_steps_run_id ON test_steps (run_id, step_number);"
+        )
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_runs_created_at ON test_runs (created_at DESC);"
+        )
         await db.commit()
     logger.info(f"💾 SQLite Database initialized at {settings.DB_PATH}")
 
