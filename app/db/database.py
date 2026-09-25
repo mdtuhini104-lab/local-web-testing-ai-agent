@@ -52,6 +52,17 @@ async def init_db() -> None:
             );
             """
         )
+        # Bolt Performance Optimization:
+        # 1. Index on `test_runs(created_at DESC)` optimizes ORDER BY created_at DESC in list_runs() and retention pruning.
+        #    Eliminates full table scan & sorting phase for run listings. Expected impact: O(1) index scan vs O(N log N) table sort.
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_runs_created_at ON test_runs(created_at DESC);"
+        )
+        # 2. Composite index on `test_steps(run_id, step_number ASC)` optimizes foreign key step lookups and retention deletes.
+        #    Avoids O(N) full table scans across all stored steps when querying run details or deleting steps for a run.
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_steps_run_id_step ON test_steps(run_id, step_number ASC);"
+        )
         await db.commit()
     logger.info(f"💾 SQLite Database initialized at {settings.DB_PATH}")
 
