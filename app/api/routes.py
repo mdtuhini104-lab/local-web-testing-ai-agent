@@ -7,12 +7,12 @@ import datetime
 import json
 import logging
 import os
+import re
 from typing import Dict, List, Optional
 from fastapi import APIRouter, BackgroundTasks, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
-from agent_runner import AgentRunner, generate_master_batch_report
 from app.config import settings
 from app.db import database
 from app.api.websocket import ws_manager
@@ -53,6 +53,7 @@ async def execute_agent_task(
     headless: bool,
 ) -> Dict:
     """Background task wrapper executing AgentRunner and persisting results to DB."""
+    from agent_runner import AgentRunner
     await database.create_test_run(run_id, target_url, username)
     await ws_manager.broadcast({
         "type": "RUN_STARTED",
@@ -202,6 +203,7 @@ async def execute_agent_task(
 
 async def execute_batch_agent_tasks(batch_id: str, req: BatchRunRequest):
     """Executes multiple AgentRunners in parallel using asyncio.gather() and generates Master Batch Report."""
+    from agent_runner import generate_master_batch_report
     try:
         await ws_manager.broadcast({
             "type": "BATCH_STARTED",
@@ -253,6 +255,16 @@ async def execute_batch_agent_tasks(batch_id: str, req: BatchRunRequest):
 
 
 active_tasks: Dict[str, asyncio.Task] = {}
+
+
+def validate_identifier(identifier: str) -> str:
+    """
+    Validates run_id or batch_id to prevent path traversal attacks.
+    Strictly permits only alphanumeric characters, underscores, and hyphens.
+    """
+    if not identifier or not re.match(r"^[a-zA-Z0-9_\-]+$", identifier):
+        raise HTTPException(status_code=400, detail="Invalid run_id or batch_id format.")
+    return identifier
 
 
 def _handle_task_done(task_id: str, t: asyncio.Task):
@@ -344,6 +356,7 @@ async def list_runs(limit: int = 3):
 @router.get("/runs/{run_id}")
 async def get_run_details(run_id: str):
     """Fetches details & step history of a specific run."""
+    run_id = validate_identifier(run_id)
     run_dict = await database.get_test_run_details(run_id)
     if not run_dict:
         raise HTTPException(status_code=404, detail="Test run not found")
@@ -353,6 +366,7 @@ async def get_run_details(run_id: str):
 @router.get("/runs/{run_id}/download/json")
 async def download_report_json(run_id: str):
     """Download JSON report file."""
+    run_id = validate_identifier(run_id)
     file_path = os.path.join(settings.STORAGE_DIR, "runs", run_id, "report.json")
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="JSON report file not found")
@@ -362,6 +376,7 @@ async def download_report_json(run_id: str):
 @router.get("/runs/{run_id}/download/markdown")
 async def download_report_markdown(run_id: str):
     """Download Markdown report file."""
+    run_id = validate_identifier(run_id)
     file_path = os.path.join(settings.STORAGE_DIR, "runs", run_id, "report.md")
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Markdown report file not found")
@@ -372,6 +387,7 @@ async def download_report_markdown(run_id: str):
 @router.get("/reports/{run_id}/docx")
 async def download_report_docx(run_id: str):
     """Download Microsoft Word (.docx) report file with fallback generation."""
+    run_id = validate_identifier(run_id)
     possible_paths = [
         os.path.join(settings.STORAGE_DIR, "runs", run_id, f"{run_id}_audit_report.docx"),
         os.path.join(settings.STORAGE_DIR, "reports", f"{run_id}_audit_report.docx"),
@@ -486,7 +502,7 @@ async def get_gemini_models():
 @router.get("/batch/{batch_id}")
 async def get_batch_details(batch_id: str):
     """Fetches details & master report of a batch test run."""
-    import json
+    batch_id = validate_identifier(batch_id)
     file_path = os.path.join(settings.STORAGE_DIR, "runs", f"{batch_id}_master_report.json")
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Batch report not found")
@@ -497,6 +513,7 @@ async def get_batch_details(batch_id: str):
 @router.get("/batch/{batch_id}/download/markdown")
 async def download_batch_markdown(batch_id: str):
     """Download Master Batch Markdown report file."""
+    batch_id = validate_identifier(batch_id)
     file_path = os.path.join(settings.STORAGE_DIR, "runs", f"{batch_id}_master_report.md")
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Master batch markdown report file not found")
