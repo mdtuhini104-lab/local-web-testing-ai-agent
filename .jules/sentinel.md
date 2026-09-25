@@ -1,0 +1,4 @@
+## 2026-02-22 - Path Traversal Prevention on Report Download Routes
+**Vulnerability:** Path parameters (`run_id` and `batch_id`) in FastAPI routes were directly interpolated into filesystem paths via `os.path.join(settings.STORAGE_DIR, ...)` without input sanitization, allowing potential path traversal attempts (`../`).
+**Learning:** In FastAPI routes serving files or directories, route parameters should be strictly validated against an allowed character whitelist (e.g. `^[a-zA-Z0-9_\-]+$`) before performing file system lookups. Heavy imports (like AI dependencies in `agent_runner`) should also be imported lazily inside background tasks to ensure API route handlers remain lightweight and easily unit-testable.
+**Prevention:** Always sanitize/validate path parameters using `validate_identifier` before constructing file paths in REST API handlers.
