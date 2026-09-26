@@ -52,6 +52,14 @@ async def init_db() -> None:
             );
             """
         )
+        # Performance optimization: Index for sorting test runs by created_at DESC
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_runs_created_at ON test_runs (created_at DESC);"
+        )
+        # Performance optimization: Composite index for step queries by run_id ordered by step_number
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_steps_run_id_step ON test_steps (run_id, step_number ASC);"
+        )
         await db.commit()
     logger.info(f"💾 SQLite Database initialized at {settings.DB_PATH}")
 
