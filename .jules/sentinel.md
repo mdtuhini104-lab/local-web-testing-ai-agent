@@ -1,0 +1,4 @@
+## 2025-05-18 - Path Traversal Prevention in Report Download Routes
+**Vulnerability:** File download endpoints accepting path parameters (`run_id`, `batch_id`) construct file paths directly inside `STORAGE_DIR`. Without safe path verification, directory traversal sequences could potentially resolve to arbitrary files on the system outside the designated storage root.
+**Learning:** Checking path safety with `startswith` string matching is insufficient because sibling directories (e.g., `/app/storage_secret`) can match the prefix. Using `os.path.commonpath([abs_target, abs_base]) == abs_base` strictly verifies directory containment.
+**Prevention:** Always validate resolved absolute file paths against base directories using `os.path.commonpath` or `Path.is_relative_to` before opening or returning files via `FileResponse`.
