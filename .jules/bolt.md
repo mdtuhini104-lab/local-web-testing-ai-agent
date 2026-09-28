@@ -1,0 +1,3 @@
+## 2026-03-30 - Database Indexing on SQLite Test Step Queries
+**Learning:** `test_steps` query operations (`WHERE run_id = ? ORDER BY step_number ASC`) and `test_runs` queries (`ORDER BY created_at DESC`) lack default indexes in SQLite schema, causing full table scans during run detail lookups and retention pruning. Adding compound index `(run_id, step_number)` on `test_steps` and `(created_at DESC)` on `test_runs` significantly improves query performance as test history grows.
+**Action:** Always verify SQLite table schemas for missing indexes on foreign keys and ORDER BY columns in frequently queried tables.

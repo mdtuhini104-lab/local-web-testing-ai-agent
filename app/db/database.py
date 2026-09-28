@@ -52,6 +52,15 @@ async def init_db() -> None:
             );
             """
         )
+        # Performance Optimization (Bolt ⚡): Add database indexes on frequently queried fields
+        # Accelerate step lookups and step history retrieval by run_id and step_number
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_steps_run_id_step ON test_steps(run_id, step_number);"
+        )
+        # Accelerate recent test run queries ordered by creation timestamp
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_runs_created_at ON test_runs(created_at DESC);"
+        )
         await db.commit()
     logger.info(f"💾 SQLite Database initialized at {settings.DB_PATH}")
 
