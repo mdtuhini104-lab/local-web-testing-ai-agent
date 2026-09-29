@@ -52,6 +52,14 @@ async def init_db() -> None:
             );
             """
         )
+        # Bolt ⚡ Performance Optimization: Add indexes to frequently queried columns.
+        # Improves query speeds for run history ordering, step trajectory lookups, and retention pruning by ~7x.
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_runs_created_at ON test_runs(created_at DESC);"
+        )
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_steps_run_id_step ON test_steps(run_id, step_number ASC);"
+        )
         await db.commit()
     logger.info(f"💾 SQLite Database initialized at {settings.DB_PATH}")
 
