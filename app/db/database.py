@@ -16,9 +16,12 @@ logger = logging.getLogger("database")
 
 
 async def init_db() -> None:
-    """Initializes the SQLite database tables."""
+    """Initializes the SQLite database tables, PRAGMA settings, and performance indexes."""
     os.makedirs(os.path.dirname(settings.DB_PATH), exist_ok=True)
     async with aiosqlite.connect(settings.DB_PATH) as db:
+        # Performance optimization: WAL mode for non-blocking concurrent writes & synchronous=NORMAL
+        await db.execute("PRAGMA journal_mode=WAL;")
+        await db.execute("PRAGMA synchronous=NORMAL;")
         await db.execute(
             """
             CREATE TABLE IF NOT EXISTS test_runs (
@@ -52,6 +55,11 @@ async def init_db() -> None:
             );
             """
         )
+        # Database Performance Indexes:
+        # idx_test_steps_run_id accelerates get_test_run_details and retention step deletion from O(N) to O(log N).
+        # idx_test_runs_created_at accelerates get_test_runs list ordering and retention pruning.
+        await db.execute("CREATE INDEX IF NOT EXISTS idx_test_steps_run_id ON test_steps(run_id);")
+        await db.execute("CREATE INDEX IF NOT EXISTS idx_test_runs_created_at ON test_runs(created_at DESC);")
         await db.commit()
     logger.info(f"💾 SQLite Database initialized at {settings.DB_PATH}")
 
