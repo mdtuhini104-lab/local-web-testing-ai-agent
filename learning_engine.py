@@ -4,7 +4,10 @@ Allows the agent to search the internet for testing patterns and store them in a
 """
 import logging
 from typing import List, Dict, Any, Optional
-from duckduckgo_search import DDGS
+try:
+    from duckduckgo_search import DDGS
+except ImportError:
+    DDGS = None
 from app.config import settings
 
 logger = logging.getLogger("learning_engine")
@@ -24,7 +27,7 @@ class LearningEngine:
     def __init__(self):
         self.collection = None
         self.in_memory_docs: List[Dict[str, str]] = []
-        self.ddgs = DDGS()
+        self.ddgs = DDGS() if DDGS else None
         
         try:
             import chromadb

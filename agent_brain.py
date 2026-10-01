@@ -12,10 +12,16 @@ import os
 import re
 from typing import Any, Dict, List, Optional, Callable
 
-import torch
+try:
+    import torch
+except ImportError:
+    torch = None
 from PIL import Image
 from pydantic import BaseModel, Field
-from transformers import AutoProcessor, AutoModelForCausalLM
+try:
+    from transformers import AutoProcessor, AutoModelForCausalLM
+except ImportError:
+    AutoProcessor, AutoModelForCausalLM = None, None
 
 from app.config import settings
 from learning_engine import LearningEngine
@@ -704,7 +710,7 @@ def preload_global_model(model_name: str = settings.LOCAL_MODEL_NAME, device: Op
         logger.info(f"⚡ Global AI Model '{model_name}' already pre-warmed in memory (0.0s latency).")
         return GLOBAL_MODEL, GLOBAL_PROCESSOR
 
-    target_device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+    target_device = device or ("cuda" if (torch and torch.cuda.is_available()) else "cpu")
     logger.info(f"⚡ Pre-warming Global Local AI Model '{model_name}' on {target_device}...")
 
     import torch.nn as nn
@@ -778,7 +784,7 @@ class AIBrain:
     ):
         self.model_name = model_name
         self.temperature = temperature
-        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.device = "cuda" if (torch and torch.cuda.is_available()) else "cpu"
         self.processor = None
         self.model = None
 
