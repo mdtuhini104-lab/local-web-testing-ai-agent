@@ -21,6 +21,15 @@ logger = logging.getLogger("api_routes")
 router = APIRouter(prefix="/api")
 
 
+def safe_join_storage(base_dir: str, *paths: str) -> str:
+    """Safely resolves and validates that target path stays strictly inside base_dir to prevent Path Traversal."""
+    abs_base = os.path.abspath(base_dir)
+    target = os.path.abspath(os.path.join(abs_base, *paths))
+    if not target.startswith(abs_base + os.sep) and target != abs_base:
+        raise HTTPException(status_code=400, detail="Invalid file path")
+    return target
+
+
 class RunRequest(BaseModel):
     target_url: str = Field(..., example="http://localhost:3000")
     username: Optional[str] = Field(None, example="admin@example.com")
@@ -353,29 +362,30 @@ async def get_run_details(run_id: str):
 @router.get("/runs/{run_id}/download/json")
 async def download_report_json(run_id: str):
     """Download JSON report file."""
-    file_path = os.path.join(settings.STORAGE_DIR, "runs", run_id, "report.json")
+    file_path = safe_join_storage(settings.STORAGE_DIR, "runs", run_id, "report.json")
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="JSON report file not found")
-    return FileResponse(file_path, media_type="application/json", filename=f"{run_id}_report.json")
+    return FileResponse(file_path, media_type="application/json", filename=f"{os.path.basename(run_id)}_report.json")
 
 
 @router.get("/runs/{run_id}/download/markdown")
 async def download_report_markdown(run_id: str):
     """Download Markdown report file."""
-    file_path = os.path.join(settings.STORAGE_DIR, "runs", run_id, "report.md")
+    file_path = safe_join_storage(settings.STORAGE_DIR, "runs", run_id, "report.md")
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Markdown report file not found")
-    return FileResponse(file_path, media_type="text/markdown", filename=f"{run_id}_report.md")
+    return FileResponse(file_path, media_type="text/markdown", filename=f"{os.path.basename(run_id)}_report.md")
 
 
 @router.get("/runs/{run_id}/download/docx")
 @router.get("/reports/{run_id}/docx")
 async def download_report_docx(run_id: str):
     """Download Microsoft Word (.docx) report file with fallback generation."""
+    safe_run_dir = safe_join_storage(settings.STORAGE_DIR, "runs", run_id)
+    safe_reports_dir = safe_join_storage(settings.STORAGE_DIR, "reports")
     possible_paths = [
-        os.path.join(settings.STORAGE_DIR, "runs", run_id, f"{run_id}_audit_report.docx"),
-        os.path.join(settings.STORAGE_DIR, "reports", f"{run_id}_audit_report.docx"),
-        os.path.join("./storage/reports", f"{run_id}_audit_report.docx"),
+        os.path.join(safe_run_dir, f"{os.path.basename(run_id)}_audit_report.docx"),
+        os.path.join(safe_reports_dir, f"{os.path.basename(run_id)}_audit_report.docx"),
     ]
 
     for p in possible_paths:
@@ -387,7 +397,7 @@ async def download_report_docx(run_id: str):
             )
 
     # Try dynamic generation from report.json / summary.json / DB
-    run_dir = os.path.join(settings.STORAGE_DIR, "runs", run_id)
+    run_dir = safe_run_dir
     report_json_file = os.path.join(run_dir, "report.json")
     summary_file = os.path.join(run_dir, "summary.json")
     target_json = report_json_file if os.path.exists(report_json_file) else (summary_file if os.path.exists(summary_file) else None)
@@ -487,7 +497,7 @@ async def get_gemini_models():
 async def get_batch_details(batch_id: str):
     """Fetches details & master report of a batch test run."""
     import json
-    file_path = os.path.join(settings.STORAGE_DIR, "runs", f"{batch_id}_master_report.json")
+    file_path = safe_join_storage(settings.STORAGE_DIR, "runs", f"{batch_id}_master_report.json")
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Batch report not found")
     with open(file_path, "r", encoding="utf-8") as f:
@@ -497,7 +507,7 @@ async def get_batch_details(batch_id: str):
 @router.get("/batch/{batch_id}/download/markdown")
 async def download_batch_markdown(batch_id: str):
     """Download Master Batch Markdown report file."""
-    file_path = os.path.join(settings.STORAGE_DIR, "runs", f"{batch_id}_master_report.md")
+    file_path = safe_join_storage(settings.STORAGE_DIR, "runs", f"{batch_id}_master_report.md")
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Master batch markdown report file not found")
-    return FileResponse(file_path, media_type="text/markdown", filename=f"{batch_id}_master_report.md")
+    return FileResponse(file_path, media_type="text/markdown", filename=f"{os.path.basename(batch_id)}_master_report.md")
