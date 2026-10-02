@@ -1,0 +1,3 @@
+## 2026-03-31 - SQLite Query Performance Optimization via Indexing
+**Learning:** In aiosqlite/SQLite setups with frequent ordering (`ORDER BY created_at DESC`) and foreign-key step lookups (`WHERE run_id = ?`), omitting indexes forces full table scans on every API request and retention cleanup run. Adding explicit composite and single-column indexes dramatically improves query plan efficiency from O(N) to O(log N).
+**Action:** Always verify that SQLite tables created via `CREATE TABLE IF NOT EXISTS` also include `CREATE INDEX IF NOT EXISTS` on fields queried in `ORDER BY` clauses or foreign key filter predicates.

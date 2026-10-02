@@ -16,7 +16,7 @@ logger = logging.getLogger("database")
 
 
 async def init_db() -> None:
-    """Initializes the SQLite database tables."""
+    """Initializes the SQLite database tables and indexes."""
     os.makedirs(os.path.dirname(settings.DB_PATH), exist_ok=True)
     async with aiosqlite.connect(settings.DB_PATH) as db:
         await db.execute(
@@ -51,6 +51,15 @@ async def init_db() -> None:
                 FOREIGN KEY (run_id) REFERENCES test_runs(run_id) ON DELETE CASCADE
             );
             """
+        )
+        # Bolt Performance Optimization:
+        # Index created_at on test_runs for O(log N) sorting on get_test_runs and prune_old_test_runs queries.
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_runs_created_at ON test_runs(created_at DESC);"
+        )
+        # Index run_id and step_number on test_steps for fast step history lookups and retention pruning deletes.
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_steps_run_id_step ON test_steps(run_id, step_number);"
         )
         await db.commit()
     logger.info(f"💾 SQLite Database initialized at {settings.DB_PATH}")
