@@ -16,9 +16,13 @@ logger = logging.getLogger("database")
 
 
 async def init_db() -> None:
-    """Initializes the SQLite database tables."""
+    """Initializes the SQLite database tables and indexes."""
     os.makedirs(os.path.dirname(settings.DB_PATH), exist_ok=True)
     async with aiosqlite.connect(settings.DB_PATH) as db:
+        # Performance optimization: Enable WAL mode and NORMAL synchronous mode for high concurrent throughput
+        await db.execute("PRAGMA journal_mode=WAL;")
+        await db.execute("PRAGMA synchronous=NORMAL;")
+
         await db.execute(
             """
             CREATE TABLE IF NOT EXISTS test_runs (
@@ -51,6 +55,13 @@ async def init_db() -> None:
                 FOREIGN KEY (run_id) REFERENCES test_runs(run_id) ON DELETE CASCADE
             );
             """
+        )
+        # Performance optimization: Add indexes for O(log N) step lookups, fast retention pruning, and sorted run listing
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_steps_run_id_step ON test_steps(run_id, step_number);"
+        )
+        await db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_test_runs_created_at ON test_runs(created_at DESC);"
         )
         await db.commit()
     logger.info(f"💾 SQLite Database initialized at {settings.DB_PATH}")

@@ -1,0 +1,3 @@
+## 2025-05-18 - SQLite Performance Optimization with Composite Indexes and WAL Mode
+**Learning:** Querying steps (`SELECT * FROM test_steps WHERE run_id = ? ORDER BY step_number ASC`), pruning test runs, and fetching recent test runs (`SELECT * FROM test_runs ORDER BY created_at DESC`) without database indexes resulted in $O(N)$ full-table scans and temporary B-tree sorting in SQLite. Additionally, default journal mode caused lock contention on concurrent async operations.
+**Action:** Always add composite indexes (`idx_test_steps_run_id_step` and `idx_test_runs_created_at`) and enable `PRAGMA journal_mode=WAL;` / `PRAGMA synchronous=NORMAL;` upon SQLite database initialization to convert query execution plans from `SCAN` to `SEARCH USING INDEX`.
