@@ -52,6 +52,11 @@ async def init_db() -> None:
             );
             """
         )
+        # Bolt Performance Optimization:
+        # Index run_id on test_steps to optimize join/filter queries in get_test_run_details (prevents full-table scans when fetching steps for a run).
+        # Index created_at on test_runs to optimize ORDER BY created_at DESC in get_test_runs and retention pruning.
+        await db.execute("CREATE INDEX IF NOT EXISTS idx_test_steps_run_id ON test_steps(run_id);")
+        await db.execute("CREATE INDEX IF NOT EXISTS idx_test_runs_created_at ON test_runs(created_at DESC);")
         await db.commit()
     logger.info(f"💾 SQLite Database initialized at {settings.DB_PATH}")
 
