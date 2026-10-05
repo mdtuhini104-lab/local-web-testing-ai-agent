@@ -7,6 +7,7 @@ import datetime
 import json
 import logging
 import os
+import re
 from typing import Dict, List, Optional
 from fastapi import APIRouter, BackgroundTasks, HTTPException
 from fastapi.responses import FileResponse
@@ -19,6 +20,27 @@ from app.api.websocket import ws_manager
 
 logger = logging.getLogger("api_routes")
 router = APIRouter(prefix="/api")
+
+ID_PATTERN = re.compile(r"^[a-zA-Z0-9_\-]+$")
+
+
+def validate_id(identifier: str, param_name: str = "id") -> str:
+    """Validates that identifier contains only safe alphanumeric, underscore, or hyphen characters to prevent path traversal."""
+    if not identifier or not ID_PATTERN.match(identifier):
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid {param_name}: Parameter contains unsafe characters.",
+        )
+    return identifier
+
+
+def safe_join_storage(*paths: str) -> str:
+    """Safely joins paths under settings.STORAGE_DIR ensuring target path remains strictly inside storage bounds."""
+    base_dir = os.path.abspath(settings.STORAGE_DIR)
+    target_path = os.path.abspath(os.path.join(base_dir, *paths))
+    if not (target_path == base_dir or target_path.startswith(base_dir + os.sep)):
+        raise HTTPException(status_code=403, detail="Access denied: Path traversal attempt detected.")
+    return target_path
 
 
 class RunRequest(BaseModel):
@@ -344,6 +366,7 @@ async def list_runs(limit: int = 3):
 @router.get("/runs/{run_id}")
 async def get_run_details(run_id: str):
     """Fetches details & step history of a specific run."""
+    run_id = validate_id(run_id, "run_id")
     run_dict = await database.get_test_run_details(run_id)
     if not run_dict:
         raise HTTPException(status_code=404, detail="Test run not found")
@@ -353,7 +376,8 @@ async def get_run_details(run_id: str):
 @router.get("/runs/{run_id}/download/json")
 async def download_report_json(run_id: str):
     """Download JSON report file."""
-    file_path = os.path.join(settings.STORAGE_DIR, "runs", run_id, "report.json")
+    run_id = validate_id(run_id, "run_id")
+    file_path = safe_join_storage("runs", run_id, "report.json")
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="JSON report file not found")
     return FileResponse(file_path, media_type="application/json", filename=f"{run_id}_report.json")
@@ -362,7 +386,8 @@ async def download_report_json(run_id: str):
 @router.get("/runs/{run_id}/download/markdown")
 async def download_report_markdown(run_id: str):
     """Download Markdown report file."""
-    file_path = os.path.join(settings.STORAGE_DIR, "runs", run_id, "report.md")
+    run_id = validate_id(run_id, "run_id")
+    file_path = safe_join_storage("runs", run_id, "report.md")
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Markdown report file not found")
     return FileResponse(file_path, media_type="text/markdown", filename=f"{run_id}_report.md")
@@ -372,10 +397,10 @@ async def download_report_markdown(run_id: str):
 @router.get("/reports/{run_id}/docx")
 async def download_report_docx(run_id: str):
     """Download Microsoft Word (.docx) report file with fallback generation."""
+    run_id = validate_id(run_id, "run_id")
     possible_paths = [
-        os.path.join(settings.STORAGE_DIR, "runs", run_id, f"{run_id}_audit_report.docx"),
-        os.path.join(settings.STORAGE_DIR, "reports", f"{run_id}_audit_report.docx"),
-        os.path.join("./storage/reports", f"{run_id}_audit_report.docx"),
+        safe_join_storage("runs", run_id, f"{run_id}_audit_report.docx"),
+        safe_join_storage("reports", f"{run_id}_audit_report.docx"),
     ]
 
     for p in possible_paths:
@@ -387,9 +412,9 @@ async def download_report_docx(run_id: str):
             )
 
     # Try dynamic generation from report.json / summary.json / DB
-    run_dir = os.path.join(settings.STORAGE_DIR, "runs", run_id)
-    report_json_file = os.path.join(run_dir, "report.json")
-    summary_file = os.path.join(run_dir, "summary.json")
+    run_dir = safe_join_storage("runs", run_id)
+    report_json_file = safe_join_storage("runs", run_id, "report.json")
+    summary_file = safe_join_storage("runs", run_id, "summary.json")
     target_json = report_json_file if os.path.exists(report_json_file) else (summary_file if os.path.exists(summary_file) else None)
 
     summary_dict = {}
@@ -487,7 +512,8 @@ async def get_gemini_models():
 async def get_batch_details(batch_id: str):
     """Fetches details & master report of a batch test run."""
     import json
-    file_path = os.path.join(settings.STORAGE_DIR, "runs", f"{batch_id}_master_report.json")
+    batch_id = validate_id(batch_id, "batch_id")
+    file_path = safe_join_storage("runs", f"{batch_id}_master_report.json")
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Batch report not found")
     with open(file_path, "r", encoding="utf-8") as f:
@@ -497,7 +523,8 @@ async def get_batch_details(batch_id: str):
 @router.get("/batch/{batch_id}/download/markdown")
 async def download_batch_markdown(batch_id: str):
     """Download Master Batch Markdown report file."""
-    file_path = os.path.join(settings.STORAGE_DIR, "runs", f"{batch_id}_master_report.md")
+    batch_id = validate_id(batch_id, "batch_id")
+    file_path = safe_join_storage("runs", f"{batch_id}_master_report.md")
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Master batch markdown report file not found")
     return FileResponse(file_path, media_type="text/markdown", filename=f"{batch_id}_master_report.md")
